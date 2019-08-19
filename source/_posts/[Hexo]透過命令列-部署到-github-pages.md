@@ -42,3 +42,7 @@ hexo clean && hexo d
 **<center>最後，記得在 Repo 上開啟 Pages 的服務唷</center>**
 
 ---
+
+### 相關連結
+[hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git)
+[都寫到這裡了才發現官網有教學...](https://hexo.io/zh-tw/docs/deployment.html)
