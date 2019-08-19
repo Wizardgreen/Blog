@@ -41,3 +41,9 @@ xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer dire
 ```shell
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 ```
+
+---
+
+## 詳細討論
+- [Github issues - node-gyp](https://github.com/nodejs/node-gyp/issues/569)
+- [xcode-select active developer directory error](https://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error/17980786#17980786)
