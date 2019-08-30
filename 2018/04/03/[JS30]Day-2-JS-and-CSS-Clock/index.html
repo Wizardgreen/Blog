@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>\[JS30\] Day 2 - JS and CSS Clock | Greene&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="JavaScript">
+  
+  
+  
+  
+  <meta name="description" content="使用 JS 與 CSS 製作時鐘">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="\[JS30\] Day 2 - JS and CSS Clock">
+<meta property="og:url" content="https://wizardgreen.github.io/Blog/2018/04/03/[JS30]Day-2-JS-and-CSS-Clock/index.html">
+<meta property="og:site_name" content="Greene&#39;s Blog">
+<meta property="og:description" content="使用 JS 與 CSS 製作時鐘">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/04/03/[JS30]Day-2-JS-and-CSS-Clock/cover.png">
+<meta property="og:updated_time" content="2019-08-23T11:00:25.712Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="\[JS30\] Day 2 - JS and CSS Clock">
+<meta name="twitter:description" content="使用 JS 與 CSS 製作時鐘">
+<meta name="twitter:image" content="https://wizardgreen.github.io/Blog/2018/04/03/[JS30]Day-2-JS-and-CSS-Clock/cover.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Greene&#39;s Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/Blog/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/Blog/css/style.css">
+
+  <script src="/Blog/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/Blog/css/bootstrap.css">
+  <link rel="stylesheet" href="/Blog/css/fashion.css">
+  <link rel="stylesheet" href="/Blog/css/glyphs.css">
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/Blog/" title="Greene&#39;s Blog" rel="home"> Greene&#39;s Blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/">首頁</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/archives">彙整</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/categories">分類</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/tags">標籤</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[JS30]Day-2-JS-and-CSS-Clock" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      \[JS30\] Day 2 - JS and CSS Clock
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/Blog/2018/04/03/[JS30]Day-2-JS-and-CSS-Clock/" class="article-date">
+	  <time datetime="2018-04-03T08:29:43.000Z" itemprop="datePublished">四月 3, 2018</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/JavaScript-30/">JavaScript 30</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center>使用 JS 與 CSS 製作時鐘</center>
+
+<a id="more"></a>
+
+<img src="/Blog/2018/04/03/[JS30]Day-2-JS-and-CSS-Clock/cover.png">
+
+<h2 id="Day-2-JS-and-CSS-Clock"><a href="#Day-2-JS-and-CSS-Clock" class="headerlink" title="Day 2: JS and CSS Clock"></a><center>Day 2: JS and CSS Clock</center></h2><h2 id="檔案結構"><a href="#檔案結構" class="headerlink" title="檔案結構"></a><center>檔案結構</center></h2><h3 id="CSS-Transform"><a href="#CSS-Transform" class="headerlink" title="CSS-Transform"></a>CSS-Transform</h3><p>打開檔案之後，我們能看到所有螢幕上的元素都已經清楚的排序在 HTML 的<code>&lt;body&gt;</code>，下方的<code>&lt;style&gt;</code>也可以看到每一項元素對應的 CSS。</p>
+<p>我們可以馬上注意到時、分、秒，三個指針是重疊並且都停在九點鐘方向，先運用比較進階的 CSS 技巧來將調整到12點整的位子，接著再用 JS 來與當下的時間做搭配，而這個 CSS 功能就叫做<code>Transform</code>。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.hand</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(90deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>Transform</code> 有非常多種的參數可以使用，顧名思義就是要使指定的元素”變形”，而<code>rotate()</code>參數是翻轉的意思，要注意這邊的單位是<code>deg</code>角度，也就是使<code>.hand</code>往X軸正向轉90度，不太熟悉二元座標的人可以嘗試看看把參數改成負值，這樣應該會比較好理解。</p>
+<p>大家改完以後看畫面一定滿臉困惑，因為<code>Transform</code>本身是以元素的中心點做軸心去變形的，所以我們要再加入下面這行。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.hand</span> &#123;</span><br><span class="line">  <span class="attribute">transform-origin</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(90deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>Tnsform-origin</code>能夠改變<code>Transform</code>效果的軸心，也是X軸的原理，輸入了100%就代表著將元素的最右方做為軸心，於是三個指針就能從九點鐘方向移到 12 點整囉，相信大家都很聰明，這項 CSS 功能就會是時鐘移動的主要關鍵。我們可以再加上前一堂課提過的<code>Transition</code> 讓時鐘在位移的時候會有循序漸進的效果。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.hand</span> &#123;</span><br><span class="line">  <span class="attribute">transform-origin</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(90deg);</span><br><span class="line">  <span class="attribute">transition</span>: all .<span class="number">05s</span>; </span><br><span class="line">  // .hand 的所有 css 特效在改變的時候會有 0.05秒的漸變效果。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>還有一個叫<code>transition-timing-function</code>的功能，可以改變整個漸變過程的速度曲線，不過在講下去可能會離題，我會將相關的資料整理在最後一段讓大家研究，想更厲害的人絕對不能錯過。</p>
+<hr>
+<h2 id="配合現在時間"><a href="#配合現在時間" class="headerlink" title="配合現在時間"></a><center>配合現在時間</center></h2><h3 id="Step1-建立-function"><a href="#Step1-建立-function" class="headerlink" title="Step1 : 建立 function"></a>Step1 : 建立 function</h3><p>由於大多概念都比較基礎，我這邊只會註解上一堂沒提到的內容，如果看了還不是很懂的話，歡迎來信讓我了解一下自己哪邊表達的不夠好。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">const</span> secondHand = <span class="built_in">document</span>.querySelector(<span class="string">'.second-hand'</span>);</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">setDate</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="comment">// 建立 Date 物件，其值就是當下的時間。</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> seconds = now.getSeconds();</span><br><span class="line">    <span class="comment">// Date 物件可以透過 getSeconds() 的方式取出'秒'的值。</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> secondsDegrees = ((seconds / <span class="number">60</span>) * <span class="number">360</span>) + <span class="number">90</span>;</span><br><span class="line">    <span class="comment">// 一圈共 60 秒，因此 seconds/60 能獲得秒針在時鐘上的經過的比例</span></span><br><span class="line">    <span class="comment">// 接著乘上一圈 360 度，我們就能知道在指針在對應的位置所需要的數值。</span></span><br><span class="line">    <span class="comment">// 最後別忘了一開始提過 +90 度，讓指針從12點鐘方向開始運作。</span></span><br><span class="line"></span><br><span class="line">    secondHand.style.transform = <span class="string">`rotate(<span class="subst">$&#123;secondsDegrees&#125;</span>deg)`</span>;</span><br><span class="line">    <span class="comment">// 將 CSS 套上計算結果就好囉。</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Step2-動起來"><a href="#Step2-動起來" class="headerlink" title="Step2 : 動起來!"></a>Step2 : 動起來!</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setInterval(setDate, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<p><code>setInterval(function, time)</code>很簡單，就是每<code>time</code>的時間就執行一次<code>function</code>，但要注意時間是以毫秒做單位，所以上述的寫法結果是每一秒執行一次我們所寫的 function。</p>
+<p>接下來使用<code>getMinutes()</code>與<code>getHours()</code>取出剩下的值，原理都相同，大家試著自己補上其餘內容吧。小提醒一下，秒針分針一圈都是60個單位，但是別忘記時針是12個單位，所以在寫法上要有些微調整，我會將寫完的結果放在下一段，但記得要自己先動腦嘗試過，這樣的學習成果才會扎實的記在腦中。</p>
+<hr>
+<h2 id="Full-Script"><a href="#Full-Script" class="headerlink" title="Full Script"></a><center>Full Script</center></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> secondHand = <span class="built_in">document</span>.querySelector(<span class="string">'.second-hand'</span>);</span><br><span class="line"><span class="keyword">const</span> minHand = <span class="built_in">document</span>.querySelector(<span class="string">'.min-hand'</span>);</span><br><span class="line"><span class="keyword">const</span> hourHand = <span class="built_in">document</span>.querySelector(<span class="string">'.hour-hand'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setDate</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> seconds = now.getSeconds();</span><br><span class="line">  <span class="keyword">const</span> secondsDegrees = ((seconds / <span class="number">60</span>) * <span class="number">360</span>) + <span class="number">90</span>;</span><br><span class="line">  secondHand.style.transform = <span class="string">`rotate(<span class="subst">$&#123;secondsDegrees&#125;</span>deg)`</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> mins = now.getMinutes();</span><br><span class="line">  <span class="keyword">const</span> minsDegrees = ((mins / <span class="number">60</span>) * <span class="number">360</span>) + <span class="number">90</span>;</span><br><span class="line">  minHand.style.transform = <span class="string">`rotate(<span class="subst">$&#123;minsDegrees&#125;</span>deg)`</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> hours = now.getHours();</span><br><span class="line">  <span class="keyword">const</span> hoursDegrees = ((hours / <span class="number">12</span>) * <span class="number">360</span>) + <span class="number">90</span>;</span><br><span class="line">  hourHand.style.transform = <span class="string">`rotate(<span class="subst">$&#123;hoursDegrees&#125;</span>deg)`</span>;</span><br><span class="line">&#125;</span><br><span class="line">setInterval(setDate, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="相關連結"><a href="#相關連結" class="headerlink" title="相關連結"></a><center>相關連結</center></h2><ul>
+<li><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/transform" target="_blank" rel="noopener">MDN Transform</a></li>
+<li><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/transition-timing-function" target="_blank" rel="noopener">MDN Transition timing function</a></li>
+<li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" rel="noopener">MDN JavaScript Data()</a></li>
+<li><a href="/Blog/2018/03/30/JavaScript30-介紹/" title="回去 JavaScript30-介紹">回去 JavaScript30-介紹</a></li>
+<li><a href="/Blog/2018/04/10/[JS30]Day-3-CSS-Variables/" title="繼續 Day3">繼續 Day3</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/JavaScript-30/">JavaScript 30</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/JavaScript/">JavaScript</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Blog/2018/04/07/JavaScript-This-用途整理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JavaScript This 用途整理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Blog/2018/04/02/2018-前端面試心得/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2018 前端自學&amp;面試心得</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目錄</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-2-JS-and-CSS-Clock"><span class="nav-number">1.</span> <span class="nav-text">Day 2: JS and CSS Clock</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#檔案結構"><span class="nav-number">2.</span> <span class="nav-text">檔案結構</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-Transform"><span class="nav-number">2.1.</span> <span class="nav-text">CSS-Transform</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配合現在時間"><span class="nav-number">3.</span> <span class="nav-text">配合現在時間</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-建立-function"><span class="nav-number">3.1.</span> <span class="nav-text">Step1 : 建立 function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-動起來"><span class="nav-number">3.2.</span> <span class="nav-text">Step2 : 動起來!</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Full-Script"><span class="nav-number">4.</span> <span class="nav-text">Full Script</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相關連結"><span class="nav-number">5.</span> <span class="nav-text">相關連結</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/Blog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/Blog/tags" class="mobile-nav-link">Tags</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Greene&#39;s Blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+  <script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/Blog/js/script.js"></script>
+<script src="/Blog/js/bootstrap.js"></script>
+<script src="/Blog/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

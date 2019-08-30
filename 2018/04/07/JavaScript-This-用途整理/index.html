@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>JavaScript This 用途整理 | Greene&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="JavaScript">
+  
+  
+  
+  
+  <meta name="description" content="JavaScript This 用途整理後天就是我掛上工程師頭銜的第一個上班日，回想起半年前剛開始自學的時候，光是強者學弟寫給我的 React example 就得花上好幾個小時才能讀懂，印象最深刻的就是this，強者學弟都懶得解釋，直喊著「乾哥你還是上網查好了，很難講清楚…」。&amp;nbsp;&amp;nbsp; `this`並沒有一個明確的答案，而是要依照當下的狀況，**指向**出不同的結果。 雖然聽起來">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript This 用途整理">
+<meta property="og:url" content="https://wizardgreen.github.io/Blog/2018/04/07/JavaScript-This-用途整理/index.html">
+<meta property="og:site_name" content="Greene&#39;s Blog">
+<meta property="og:description" content="JavaScript This 用途整理後天就是我掛上工程師頭銜的第一個上班日，回想起半年前剛開始自學的時候，光是強者學弟寫給我的 React example 就得花上好幾個小時才能讀懂，印象最深刻的就是this，強者學弟都懶得解釋，直喊著「乾哥你還是上網查好了，很難講清楚…」。&amp;nbsp;&amp;nbsp; `this`並沒有一個明確的答案，而是要依照當下的狀況，**指向**出不同的結果。 雖然聽起來">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2019-08-23T11:00:25.680Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript This 用途整理">
+<meta name="twitter:description" content="JavaScript This 用途整理後天就是我掛上工程師頭銜的第一個上班日，回想起半年前剛開始自學的時候，光是強者學弟寫給我的 React example 就得花上好幾個小時才能讀懂，印象最深刻的就是this，強者學弟都懶得解釋，直喊著「乾哥你還是上網查好了，很難講清楚…」。&amp;nbsp;&amp;nbsp; `this`並沒有一個明確的答案，而是要依照當下的狀況，**指向**出不同的結果。 雖然聽起來">
+  
+    <link rel="alternate" href="/atom.xml" title="Greene&#39;s Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/Blog/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/Blog/css/style.css">
+
+  <script src="/Blog/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/Blog/css/bootstrap.css">
+  <link rel="stylesheet" href="/Blog/css/fashion.css">
+  <link rel="stylesheet" href="/Blog/css/glyphs.css">
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/Blog/" title="Greene&#39;s Blog" rel="home"> Greene&#39;s Blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/">首頁</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/archives">彙整</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/categories">分類</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/tags">標籤</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-JavaScript-This-用途整理" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      JavaScript This 用途整理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/Blog/2018/04/07/JavaScript-This-用途整理/" class="article-date">
+	  <time datetime="2018-04-07T13:54:28.000Z" itemprop="datePublished">四月 7, 2018</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JavaScript-This-用途整理"><a href="#JavaScript-This-用途整理" class="headerlink" title="JavaScript This 用途整理"></a><center>JavaScript This 用途整理</center></h2><p>後天就是我掛上工程師頭銜的第一個上班日，回想起半年前剛開始自學的時候，光是強者學弟寫給我的 React example 就得花上好幾個小時才能讀懂，印象最深刻的就是<code>this</code>，強者學弟都懶得解釋，直喊著「乾哥你還是上網查好了，很難講清楚…」。<br>&nbsp;<br>&nbsp;</p>
+<center>`this`並沒有一個明確的答案，而是要依照當下的狀況，**指向**出不同的結果。</center>
+<center>雖然聽起來很多變數，但只要掌握好幾項規則，大家都一定能駕輕就熟!</center>
+
+<h2 id="指向調用函式的物件"><a href="#指向調用函式的物件" class="headerlink" title="指向調用函式的物件"></a><center>指向調用函式的物件</center></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Example 1</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  passwd: <span class="number">528491</span>,</span><br><span class="line">  func: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log (<span class="keyword">this</span>.passwd)&#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj.func(); <span class="comment">// 528491</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Example 2</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  passwd: <span class="number">2018</span>,</span><br><span class="line">  b: &#123;</span><br><span class="line">    passwd: <span class="number">528491</span>,</span><br><span class="line">    func: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log (<span class="keyword">this</span>.passwd)&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.func(); <span class="comment">// 528491</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Example 3</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log (<span class="keyword">this</span>.passwd)&#125;;</span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  passwd: <span class="number">528491</span>,</span><br><span class="line">  b: func</span><br><span class="line">&#125;;</span><br><span class="line">func(); <span class="comment">// undefine</span></span><br><span class="line">obj.b(); <span class="comment">// 528491</span></span><br></pre></td></tr></table></figure>
+
+<p>從上面的範例中我們可以得知，當透過物件調用<code>this</code>時，<code>this</code>就會指向該物件。我們可以看出一個<strong>關鍵規則</strong>：當我們以<code>obj.func()</code>的方式調用 function，<code>this</code>就會指向<code>obj</code>。從多層結構來看，我們可以得出更明顯的結論，例如<code>obj1.obj2.func()</code>，<code>this</code>則會指向<code>obj2</code>。也就是說當以<code>物件.方法()</code>的形式調用時，<code>this</code>會指向同一層、存放這個方法的物件。</p>
+<h2 id="指向全域物件"><a href="#指向全域物件" class="headerlink" title="指向全域物件"></a><center>指向全域物件</center></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Example 1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="keyword">this</span>)&#125;</span><br><span class="line">func() <span class="comment">// window</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Example 2</span></span><br><span class="line"><span class="keyword">const</span> passwd = <span class="number">528491</span>;</span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  passwd: <span class="number">1234</span>;</span><br><span class="line">  func: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="built_in">console</span>.log(<span class="keyword">this</span>.passwd)&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> func2 = obj.func();</span><br><span class="line"></span><br><span class="line">obj.func() <span class="comment">// 1234</span></span><br><span class="line">func2 <span class="comment">// 528491</span></span><br></pre></td></tr></table></figure>
+
+<p>如果你看到這邊，應該就能明顯看出運作規則。不透過物件，直接調用 function 的時候，我們會直接寫<code>方法()</code>，這寫法也同等於<code>window.方法()</code>。看出模式了嗎? 就跟前段的規則一樣，<code>this</code>會指向同一層、存放方法的物件，在這裡就是全域物件<code>window</code>(在 Node.js 裡則是<code>Global</code>)。</p>
+<h2 id="指向-DOM-元素"><a href="#指向-DOM-元素" class="headerlink" title="指向 DOM 元素"></a><center>指向 DOM 元素</center></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Example HTML part ---&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>press me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Example JS part</span></span><br><span class="line"><span class="keyword">const</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showThis</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">btn.addEventListener(<span class="string">'click'</span>, showThis);</span><br><span class="line"><span class="comment">// this = &lt;button id="btn"&gt;press me&lt;/button&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>當 DOM 元素調用帶有<code>this</code>的 function 時，<code>this</code>就會指向該 DOM 元素。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a><center>其他</center></h2>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/JavaScript/">JavaScript</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Blog/2018/04/10/[JS30]Day-3-CSS-Variables/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          \[JS30\] Day 3 - CSS Variables
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Blog/2018/04/03/[JS30]Day-2-JS-and-CSS-Clock/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">\[JS30\] Day 2 - JS and CSS Clock</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目錄</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-This-用途整理"><span class="nav-number">1.</span> <span class="nav-text">JavaScript This 用途整理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指向調用函式的物件"><span class="nav-number">2.</span> <span class="nav-text">指向調用函式的物件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指向全域物件"><span class="nav-number">3.</span> <span class="nav-text">指向全域物件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指向-DOM-元素"><span class="nav-number">4.</span> <span class="nav-text">指向 DOM 元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/Blog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/Blog/tags" class="mobile-nav-link">Tags</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Greene&#39;s Blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+  <script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/Blog/js/script.js"></script>
+<script src="/Blog/js/bootstrap.js"></script>
+<script src="/Blog/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

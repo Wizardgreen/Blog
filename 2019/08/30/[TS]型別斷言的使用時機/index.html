@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>\[TypeScript\] 型別斷言(annotations)使用時機 | Greene&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="TypeScript">
+  
+  
+  
+  
+  <meta name="description" content="Type Script 學習筆記 - 型別斷言(annotations)">
+<meta name="keywords" content="TypeScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="\[TypeScript\] 型別斷言(annotations)使用時機">
+<meta property="og:url" content="https://wizardgreen.github.io/Blog/2019/08/30/[TS]型別斷言的使用時機/index.html">
+<meta property="og:site_name" content="Greene&#39;s Blog">
+<meta property="og:description" content="Type Script 學習筆記 - 型別斷言(annotations)">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2019-08-30T11:31:18.609Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="\[TypeScript\] 型別斷言(annotations)使用時機">
+<meta name="twitter:description" content="Type Script 學習筆記 - 型別斷言(annotations)">
+  
+    <link rel="alternate" href="/atom.xml" title="Greene&#39;s Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/Blog/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/Blog/css/style.css">
+
+  <script src="/Blog/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/Blog/css/bootstrap.css">
+  <link rel="stylesheet" href="/Blog/css/fashion.css">
+  <link rel="stylesheet" href="/Blog/css/glyphs.css">
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/Blog/" title="Greene&#39;s Blog" rel="home"> Greene&#39;s Blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/">首頁</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/archives">彙整</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/categories">分類</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/tags">標籤</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[TS]型別斷言的使用時機" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      \[TypeScript\] 型別斷言(annotations)使用時機
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/Blog/2019/08/30/[TS]型別斷言的使用時機/" class="article-date">
+	  <time datetime="2019-08-29T23:29:00.000Z" itemprop="datePublished">八月 30, 2019</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/Note/">Note</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center>Type Script 學習筆記 - 型別斷言(annotations)</center>
+
+<a id="more"></a>
+
+<p>VScode &amp; TypeScript 的型別推斷(Type inference)總是可以讓開發人員省掉許多時間，我們不需要每一行每一個變數都一步一步寫下他們的型別，但總會有些情境是沒辦法讓 TS 自動推斷出結果，有四種情況需要開發者親自撰寫型別斷言：</p>
+<ol>
+<li>只宣告變數，但之後才給予初始值</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 僅宣告變數會自動判斷為 any，所以賦予任何值都不會有警告</span></span><br><span class="line"><span class="keyword">let</span> name;</span><br><span class="line">name = <span class="string">"Greene"</span>;</span><br><span class="line">name = <span class="number">1208</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 同樣的，因為 hasGreen 會是 type any，可能被帶入任何值導致後續運作出錯</span></span><br><span class="line"><span class="keyword">const</span> array = [<span class="string">"red"</span>, <span class="string">"red"</span>, <span class="string">"green"</span>, <span class="string">"red"</span>];</span><br><span class="line"><span class="keyword">let</span> hasGreen;</span><br><span class="line">array.forEach(<span class="function">(<span class="params">item: <span class="built_in">string</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (item === <span class="string">"green"</span>) &#123;</span><br><span class="line">    hasGreen = <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 所以我們應該要在宣告時就加入型別</span></span><br><span class="line"><span class="keyword">let</span> hasGreen: <span class="built_in">boolean</span>;</span><br><span class="line"><span class="comment">// 但以這段 Code 來說，最好還是這樣寫會比較清楚</span></span><br><span class="line"><span class="keyword">let</span> hasGreen = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>無法被推斷的型別</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 這是一段糞 Code，但透過範例就能理解運用的情境</span></span><br><span class="line"><span class="comment">// 而且人在江湖...難免就是會遇到這種事...</span></span><br><span class="line"><span class="keyword">const</span> numberList = [<span class="number">-82</span>, <span class="number">-12</span>, <span class="number">8</span>];</span><br><span class="line"><span class="keyword">const</span> numberAboveZero = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 假設有個需求，要我們遍歷 numberList，如果有大於 0 的內容，就將其值賦予 numberAboveZero</span></span><br><span class="line"><span class="comment">// 這就是一個型別推斷無法正確推斷出我們希望的結果</span></span><br><span class="line">numberList.forEach(<span class="function">(<span class="params">n: <span class="built_in">number</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="comment">// Type 'number' is not assignable to type 'boolean'</span></span><br><span class="line">    numberAboveZero = n</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 因此我們需要型別斷言來解決這個問題</span></span><br><span class="line"><span class="keyword">const</span> numberAboveZero: <span class="built_in">boolean</span> | <span class="built_in">number</span> = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>當某個函式會回傳<code>any</code>型別，但我們需要清楚明瞭的結果</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> json = <span class="string">`&#123;</span></span><br><span class="line"><span class="string">  "x": 12,</span></span><br><span class="line"><span class="string">  "y": 8,</span></span><br><span class="line"><span class="string">&#125;`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// JSON.parse 會依照傳入字串，回傳不同型別的結果，TS 無法預測型別</span></span><br><span class="line"><span class="comment">// coordinates 會因此判為 any，但這明顯違反了使用 TS 的初衷</span></span><br><span class="line"><span class="keyword">const</span> coordinates = <span class="built_in">JSON</span>.parse(json);</span><br><span class="line">coordinates.mightyGreen; <span class="comment">// 不會出現任何問題</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 加入型別斷言</span></span><br><span class="line"><span class="keyword">const</span> coordinates: &#123; x: <span class="built_in">number</span>; y: <span class="built_in">number</span> &#125; = <span class="built_in">JSON</span>.parse(json);</span><br><span class="line">coordinates.mightyGreen; <span class="comment">// TS 跳出錯誤警告</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>函式參數</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// TS 能夠藉由運算邏輯推斷出函式回傳的型別</span></span><br><span class="line"><span class="comment">// 但輸入參數則需要開發者自行斷言</span></span><br><span class="line"><span class="keyword">const</span> adder = <span class="function">(<span class="params">a: <span class="built_in">number</span>, b: <span class="built_in">number</span></span>) =&gt;</span> a + b;</span><br><span class="line"><span class="keyword">const</span> subtractor: <span class="function">(<span class="params">a: <span class="built_in">number</span>, b: <span class="built_in">number</span></span>) =&gt;</span> = <span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 當然，如果你想避免邏輯寫錯，永遠都可以自行斷言回傳型別</span></span><br><span class="line"><span class="keyword">const</span> multiplier = (a: <span class="built_in">number</span>, b: <span class="built_in">number</span>): <span class="function"><span class="params">number</span> =&gt;</span> a * b;</span><br><span class="line"><span class="keyword">const</span> divider: <span class="function">(<span class="params">a: <span class="built_in">number</span>, b: <span class="built_in">number</span></span>) =&gt;</span> <span class="built_in">number</span> = <span class="function">(<span class="params">a, b</span>) =&gt;</span> a / b;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/Note/">Note</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/TypeScript/">TypeScript</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/Blog/2019/08/19/[Hexo]透過命令列-部署到-github-pages/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">\[Hexo\]透過命令列部署到 Github Pages</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目錄</strong>
+    
+      <ol class="nav">無</ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/Blog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/Blog/tags" class="mobile-nav-link">Tags</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Greene&#39;s Blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+  <script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/Blog/js/script.js"></script>
+<script src="/Blog/js/bootstrap.js"></script>
+<script src="/Blog/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

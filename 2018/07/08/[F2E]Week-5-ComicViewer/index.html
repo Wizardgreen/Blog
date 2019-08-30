@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>\[F2E\] Week 5 - ComicViewer | Greene&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="漫畫閱讀器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="\[F2E\] Week 5 - ComicViewer">
+<meta property="og:url" content="https://wizardgreen.github.io/Blog/2018/07/08/[F2E]Week-5-ComicViewer/index.html">
+<meta property="og:site_name" content="Greene&#39;s Blog">
+<meta property="og:description" content="漫畫閱讀器">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/07/08/[F2E]Week-5-ComicViewer/cover.png">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/07/08/[F2E]Week-5-ComicViewer/filestructure.png">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/07/08/[F2E]Week-5-ComicViewer/typefile.png">
+<meta property="og:updated_time" content="2019-08-23T11:00:25.703Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="\[F2E\] Week 5 - ComicViewer">
+<meta name="twitter:description" content="漫畫閱讀器">
+<meta name="twitter:image" content="https://wizardgreen.github.io/Blog/2018/07/08/[F2E]Week-5-ComicViewer/cover.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Greene&#39;s Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/Blog/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/Blog/css/style.css">
+
+  <script src="/Blog/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/Blog/css/bootstrap.css">
+  <link rel="stylesheet" href="/Blog/css/fashion.css">
+  <link rel="stylesheet" href="/Blog/css/glyphs.css">
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/Blog/" title="Greene&#39;s Blog" rel="home"> Greene&#39;s Blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/">首頁</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/archives">彙整</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/categories">分類</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/tags">標籤</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[F2E]Week-5-ComicViewer" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      \[F2E\] Week 5 - ComicViewer
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/Blog/2018/07/08/[F2E]Week-5-ComicViewer/" class="article-date">
+	  <time datetime="2018-07-08T09:10:50.000Z" itemprop="datePublished">七月 8, 2018</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/TheF2E/">TheF2E</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center>漫畫閱讀器</center>
+
+<a id="more"></a>
+
+<img src="/Blog/2018/07/08/[F2E]Week-5-ComicViewer/cover.png">
+
+<h2 id="Week-5-ComicViewer"><a href="#Week-5-ComicViewer" class="headerlink" title="Week 5: ComicViewer"></a><center>Week 5: ComicViewer</center></h2><p><a href="https://hexschool.github.io/THE_F2E_Design/week5-comic%20viewer/" target="_blank" rel="noopener">第五週設計稿</a></p>
+<p><a href="https://wizardgreen.github.io/hexSchool-TheF2E-Showcase/#/week5">完成作品連結</a></p>
+<p>高中開始注意到很多同學都會到中國的網站找連載漫畫來看，我總覺得不論介面或翻譯品質都很糟糕，所以向來不喜歡這樣的閱讀體驗。這次的主題剛好可以讓我試著來做出自己喜歡的介面，不過大致上來說我還是被設計圖與傳統的形式綁死，並沒有真的跳脫出什麼框架…嗚，一個禮拜要整個從零開始果然太困難了。</p>
+<br>
+
+<h2 id="自我學習項目"><a href="#自我學習項目" class="headerlink" title="自我學習項目"></a><center>自我學習項目</center></h2><p>-<a href="https://github.com/kaorun343/vue-property-decorator" target="_blank" rel="noopener">Vue Property Decorator</a><br>承上週都沒什麼用到的 Decorator ，這週可是大用特用，整個 class component 都是滿滿的 @@@@@@@@@！但 github 上的 issue 討論提到，Property Decorator 其實是以 TypeScript 為而生的套件，雖然我實作上沒遇到什麼狀況，但 vscode 滿片關不掉的紅字讓對於程式碼有潔癖的我很困擾，所以最後在我整個作品即將完成之際，我又把整個class component給翻修一次把它通通移除掉，等 TypeScript 實裝以後再玩吧～</p>
+<br>
+
+<p>-<a href="http://idangero.us/swiper/" target="_blank" rel="noopener">Swiper.js</a><br>-<a href="https://github.com/surmon-china/vue-awesome-swiper" target="_blank" rel="noopener">Vue Awesome Swiper</a><br>非常好用的輪播工具與他的 Vue 版好朋友，我原本是想使用在六角群組內大推的 Slick，但是一打開 Document 後才發現他是一個以 jQuery 為底的套件，個人偏見的關係最後就改用了這款(特別感謝雲龍大的推薦)。原套件的官方文件算是好懂，不過 Vue 版則並沒有清楚說明許多細部的運作。到最後翻來翻去，把 Vue 版的 Demo 都看個一下才找出想要的 API。</p>
+<br>
+
+<p>-CSS 毛玻璃 &amp; SCSS 檔案管理<br>實作了能夠穿透背景又同時讓閱讀元素保持清晰的特效，吃的效能很高，算是有點 hack 的方法，希望哪天 CSS 能開發出預設的屬性讓瀏覽器能夠更節省效能。還有這次終於比較徹底的規劃專案的 SCSS 檔案了，把變數，Mixin等等做了完整的切割，能夠輕鬆的在各個專案之間反覆運用，之後找點時間也來修正前幾週的檔案。</p>
+<br>
+
+<p>-<a href="https://vuex.vuejs.org/guide/structure.html" target="_blank" rel="noopener">Vuex 大型專案管理模式</a><br>喔~我最愛這種能夠將檔案結構與程式碼等等…逐一條理分明的辦法，其實 Vuex 的文件只給出了一點輪廓。所以整個架構還是靠自己來的比例居多，總歸來說我往四個方向實行這個管理方法：</p>
+<ol>
+<li>遵照 Vuex 官方文件的檔案結構</li>
+<li>加入 Redux 的 action type 概念來管理 commit</li>
+<li>加入 React-Redux Container/Component 分離的概念<br>(沒用在檔案命名上，我覺得這樣在目前的專案會混亂</li>
+<li>使用 Vuex 的 Module 將 store 拆分</li>
+</ol>
+<p>除此之外我也一併整理了檔案的命名方式，竟量確保在各種情況下都不容易混淆。</p>
+<img src="/Blog/2018/07/08/[F2E]Week-5-ComicViewer/filestructure.png">
+<img src="/Blog/2018/07/08/[F2E]Week-5-ComicViewer/typefile.png">
+<center>應用 Vuex module 與 Redux action type 的檔案結構...爽快!</center>
+
+<br>
+
+<h2 id="第五週感想"><a href="#第五週感想" class="headerlink" title="第五週感想"></a><center>第五週感想</center></h2><p>下一步會是期待已久的 TypeScript，成功導入以後，除了前文的 Property Decorator 以外，還有個 Vuex Class 也會是個好方向，但後兩者還不是很活躍，或許我可以先從研究他們的原理下手，看看能不能自己也想出一套好工具？說到底這對小專案與單人作業來講沒什麼幫助，只是徒增作業時間而已。但我就是喜歡條理分明的把每樣東西都整理好，更何況我更渴望想要參與一項偉大又複雜的開源計畫，就當作是為了那天而準備吧XD</p>
+<p>不知不覺活動就已經過半了，真期待接下來的題目呀~</p>
+<br>
+
+<h2 id="其他連結"><a href="#其他連結" class="headerlink" title="其他連結"></a><center>其他連結</center></h2><ul>
+<li><a href="https://github.com/Wizardgreen/hexSchool-TheF2E-Showcase/" target="_blank" rel="noopener">Github 原始碼</a></li>
+<li><a href="https://wizardgreen.github.io/hexSchool-TheF2E-Showcase/#/">F2E 作品展示台</a></li>
+<li><a href="/Blog/2018/05/25/The-F2E-前端修練精神時光屋-參賽紀錄/" title="回TheF2E目錄">回TheF2E目錄</a>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/TheF2E/">TheF2E</a>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Blog/2018/07/16/[F2E]Week-6-Validation/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          \[F2E\] Week 6 - Validation
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Blog/2018/07/01/[F2E]Week-4-ProductGallery/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">\[F2E\] Week 4 - ProductGallery</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目錄</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Week-5-ComicViewer"><span class="nav-number">1.</span> <span class="nav-text">Week 5: ComicViewer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自我學習項目"><span class="nav-number">2.</span> <span class="nav-text">自我學習項目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五週感想"><span class="nav-number">3.</span> <span class="nav-text">第五週感想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他連結"><span class="nav-number">4.</span> <span class="nav-text">其他連結</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/Blog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/Blog/tags" class="mobile-nav-link">Tags</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Greene&#39;s Blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+  <script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/Blog/js/script.js"></script>
+<script src="/Blog/js/bootstrap.js"></script>
+<script src="/Blog/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

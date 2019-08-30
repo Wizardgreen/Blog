@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>\[JS30\] Day 5 - Flex Panel Gallery | Greene&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="JavaScript">
+  
+  
+  
+  
+  <meta name="description" content="這次比較著重在學習Flex(明明是 JS30，重點卻是 CSS XD)，透過 CSS3 的Flex我們輕鬆就能做出一個能夠適應各種平台的畫面，再加上 JavaScript 就能展現出更絢麗的視覺效果。">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="\[JS30\] Day 5 - Flex Panel Gallery">
+<meta property="og:url" content="https://wizardgreen.github.io/Blog/2018/04/23/[JS30]Day-5-Flex-Panel-Gallery/index.html">
+<meta property="og:site_name" content="Greene&#39;s Blog">
+<meta property="og:description" content="這次比較著重在學習Flex(明明是 JS30，重點卻是 CSS XD)，透過 CSS3 的Flex我們輕鬆就能做出一個能夠適應各種平台的畫面，再加上 JavaScript 就能展現出更絢麗的視覺效果。">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/04/23/[JS30]Day-5-Flex-Panel-Gallery/cover.png">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/04/23/[JS30]Day-5-Flex-Panel-Gallery/caniuse.png">
+<meta property="og:updated_time" content="2019-08-23T11:00:25.718Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="\[JS30\] Day 5 - Flex Panel Gallery">
+<meta name="twitter:description" content="這次比較著重在學習Flex(明明是 JS30，重點卻是 CSS XD)，透過 CSS3 的Flex我們輕鬆就能做出一個能夠適應各種平台的畫面，再加上 JavaScript 就能展現出更絢麗的視覺效果。">
+<meta name="twitter:image" content="https://wizardgreen.github.io/Blog/2018/04/23/[JS30]Day-5-Flex-Panel-Gallery/cover.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Greene&#39;s Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/Blog/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/Blog/css/style.css">
+
+  <script src="/Blog/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/Blog/css/bootstrap.css">
+  <link rel="stylesheet" href="/Blog/css/fashion.css">
+  <link rel="stylesheet" href="/Blog/css/glyphs.css">
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/Blog/" title="Greene&#39;s Blog" rel="home"> Greene&#39;s Blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/">首頁</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/archives">彙整</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/categories">分類</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/tags">標籤</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[JS30]Day-5-Flex-Panel-Gallery" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      \[JS30\] Day 5 - Flex Panel Gallery
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/Blog/2018/04/23/[JS30]Day-5-Flex-Panel-Gallery/" class="article-date">
+	  <time datetime="2018-04-23T11:59:10.000Z" itemprop="datePublished">四月 23, 2018</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/JavaScript-30/">JavaScript 30</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>這次比較著重在學習<code>Flex</code>(明明是 JS30，重點卻是 CSS XD)，透過 CSS3 的<code>Flex</code>我們輕鬆就能做出一個能夠適應各種平台的畫面，再加上 JavaScript 就能展現出更絢麗的視覺效果。</p>
+</blockquote>
+<a id="more"></a>
+
+<img src="/Blog/2018/04/23/[JS30]Day-5-Flex-Panel-Gallery/cover.png">
+
+<h2 id="Day-5-Flex-Panel-Gallery"><a href="#Day-5-Flex-Panel-Gallery" class="headerlink" title="Day:5 Flex Panel Gallery"></a><center>Day:5 Flex Panel Gallery</center></h2><center>響應式畫廊</center>
+
+<hr>
+<h2 id="Flex"><a href="#Flex" class="headerlink" title="Flex"></a><center>Flex</center></h2><p>台灣現在最主流的排版方式是使用<code>float</code>，不過這做法其實有點過時了，目前最新的技術則是<code>Grid</code>，但瀏覽器支援程度也還不是很理想。而這次的主題<code>Flex</code>，已經在各大瀏覽器都非常成熟也非常好用，可是台灣卻還不是那麼普及的用法。如果今天學到了一個新的技術，但不清楚到底支援度如何，可以到<a href="https://caniuse.com/" target="_blank" rel="noopener">Can I use…</a>搜尋看看，就能夠評估一下究竟適不適合使用在自己的網站上面囉。<br><br></p>
+<img src="/Blog/2018/04/23/[JS30]Day-5-Flex-Panel-Gallery/caniuse.png">
+<center>Flex在各瀏覽器的支援度幾乎都是很好的綠色</center>
+
+<br>
+Flex 的概念比較特別，HTML元素可能會被分為 flex container 或 flex item，也可能兩者皆是，不論哪一個，都各有自己獨特的語句可以使用，概念會比以往的`float`還要抽象一點點。學習過程中，如果不太理解運作的方法，我建議搭配 codepen 的 [Flex Playground](https://codepen.io/enxaneta/full/adLPwv)，自己多操作個幾次，很快就會熟能生巧的。
+
+<h3 id="display-flex"><a href="#display-flex" class="headerlink" title="display: flex"></a>display: flex</h3><p>我們打開起始檔案就會發現到，整個畫面是由五個連續往下排的<code>&lt;div&gt;</code>再加上<code>background-image</code>組合成的，與影片上的成品根本天差地遠XD<br>左到右佔據整行是<code>block</code>元素預設的排版方式，我們可以在<code>.panels</code>加入<code>display: flex</code>將他轉換為 flex container，如此一來就能改變底下所有子元素的排列方式，而這些底下的子元素就是 flex item 。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.panels</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p><em>flex-grow, flex-shrink, flex-basis</em></p>
+<p>接下來是針對 flex items 才能使用的語句<code>flex</code>，這個部分應該可以說是整個 Flex 裡面最抽象的部分。我們直接下<code>flex: 1</code>到<code>.panel</code>上面，就能發現原本全部塞在左邊的圖像，已經均勻充滿整個瀏覽器了，非常實用！</p>
+<p>其實<code>flex</code>代表了三個屬性，分別是<code>flex-grow</code>、<code>flex-shrink</code> 和<code>flex-basis</code>，我們只輸入了一個數值，那就只會有<code>flex-grow</code>的效果，會有點抽象：以本題為例，五個子元素都有<code>flex-grow: 1</code>，那麼 container 底下如果有沒被分配的容量，就會分五等分給每個 flex item。如果其中一個值是 2、其他保持 1 ，那就會把剩下容量分六等份，再依照每個子元素設定的數值去分配。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.panel</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+### Props for flex container #
+*flex-direction, align-items, justify-content*
+
+<p>為了使用其他 flex 語句、達到更理想的排版，我們要把<code>.panel</code>也設定為 flex container，可是如此一來，內部的文字排序又全都被打亂了，這時候就可以加上<code>flex-direction: column</code>，來變回原本的版型。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.panel</span> &#123;</span><br><span class="line">  <span class="comment">/* 建議按順序把一個屬性加進去，看看效果有什麼改變，再加入下一個 */</span></span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="comment">/* </span></span><br><span class="line"><span class="comment">  flex-direction 可以改變 container 的軸線，</span></span><br><span class="line"><span class="comment">  讓原本預設是X軸，由左往右的順序，變成不同的模式，</span></span><br><span class="line"><span class="comment">  column 這個值，就是讓主軸變成由上往下的Y軸. </span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  預設情況下 justify-content: center 會左右置中 container 底下的元素，</span></span><br><span class="line"><span class="comment">  但我們剛改變了 container 的主軸，</span></span><br><span class="line"><span class="comment">  整整轉了 90 度，因此在這時的效果變成了上下置中，</span></span><br><span class="line"><span class="comment">  如果有點抽象的話，建議在 flex playground 上面玩個幾次。</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">  <span class="selector-tag">flex</span>: 1;</span><br><span class="line">  <span class="selector-tag">align-items</span><span class="selector-pseudo">:center</span>;</span><br><span class="line">  <span class="comment">/* </span></span><br><span class="line"><span class="comment">  注意，原本檔案內就有預設了 align-items</span></span><br><span class="line"><span class="comment">  但是在元素設定為 display: flex 之前都不會生效。</span></span><br><span class="line"><span class="comment">  跟 justify-content 類似，也因為 direction 的影響，</span></span><br><span class="line"><span class="comment">  從遠本的上下置中變成左右置中。</span></span><br><span class="line"><span class="comment">  */</span></span><br></pre></td></tr></table></figure>
+
+<p>再來讓每個<code>.panel</code>底下德元素都能夠平均分散、置中對齊，我們一樣再使用上面的技巧。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.panel</span> &gt; * &#123;</span><br><span class="line">  <span class="attribute">display</span>:flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>到這邊為止，版型就都排好囉，再來就只剩一些簡單的<code>translate</code>與 class 的操作。</p>
+<hr>
+<br>
+## <center>translateY</center>
+
+<p>使用<code>transform: transalateY()</code>與 css 選擇器，我們可以把特定的元素隱藏起來。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.panel</span> &gt; *<span class="selector-pseudo">:first-child</span> &#123; <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-100%); &#125;</span><br><span class="line"><span class="comment">/* panel 底下的第一個子元素，往上移動自身 100% 的距離 */</span></span><br><span class="line"><span class="selector-class">.panel</span> &gt; *<span class="selector-pseudo">:last-child</span> &#123; <span class="attribute">transform</span>: <span class="built_in">translateY</span>(100%); &#125;</span><br><span class="line"><span class="comment">/* 這邊應該就不用再多做解釋吧ＸＤ */</span></span><br></pre></td></tr></table></figure>
+
+<p>把兩個子元素長藏以來以後，我們先準備好使他們歸位的 class，等等再用 JS 觸發事件，移回原位。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.panel</span><span class="selector-class">.open-active</span> &gt; *<span class="selector-pseudo">:first-child</span> &#123; <span class="attribute">transform</span>: <span class="built_in">translateY</span>(0); &#125;</span><br><span class="line"><span class="selector-class">.panel</span><span class="selector-class">.open-active</span> &gt; *<span class="selector-pseudo">:last-child</span> &#123; <span class="attribute">transform</span>: <span class="built_in">translateY</span>(0); &#125;</span><br><span class="line"><span class="selector-class">.panel</span><span class="selector-class">.open</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">5</span>;</span><br><span class="line">  <span class="comment">/*  </span></span><br><span class="line"><span class="comment">  還記得嗎？如果等等某個 panel 加上了 .open ，那他會佔據多少的版面呢？</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">  .</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>CSS Part end.</p>
+<hr>
+<br>
+## <center>JavaScript toggle()</center>
+
+<p>先是點擊我們可以使用 classList.toggle() 來開關指定的 class。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> panels = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.panel'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toggleOpen</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.classList.toggle(<span class="string">'open'</span>);</span><br><span class="line">  <span class="comment">// toggle() 會判斷目標元素是否有 .open ，沒就加上去，反之亦然。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">panels.forEach(<span class="function"><span class="params">panel</span> =&gt;</span> panel.addEventListener(<span class="string">'click'</span>, toggleOpen));</span><br></pre></td></tr></table></figure>
+
+<p>最後，我們要在檔案內預設的<code>transition</code>結束時，把剛剛被我們藏起來的<code>&lt;p&gt;</code>回歸原位。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toggleActive</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (e.propertyName.includes(<span class="string">'flex'</span>)) &#123;</span><br><span class="line">  <span class="comment">// transition 只需要挑一個來觸發我們的結束事件，</span></span><br><span class="line">  <span class="comment">// 但這個判斷用的 e.propertyName，在不同瀏覽器卻有不同的稱呼</span></span><br><span class="line">  <span class="comment">// Safari === flex , Chrome &amp; FireFox === flex-grow </span></span><br><span class="line">  <span class="comment">// 因此我們可以使用 includes() 來判斷是否有共同的字母 “flex”</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.classList.toggle(<span class="string">'open-active'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">panels.forEach(<span class="function"><span class="params">panel</span> =&gt;</span> panel.addEventListener(<span class="string">'transitionend'</span>, toggleActive));</span><br></pre></td></tr></table></figure>
+
+<center>*大功告成！*</center>
+
+<hr>
+<br>
+## <center>Full Script</center>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> panels = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.panel'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toggleOpen</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.classList.toggle(<span class="string">'open'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toggleActive</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (e.propertyName.includes(<span class="string">'flex'</span>)) &#123;</span><br><span class="line">    <span class="keyword">this</span>.classList.toggle(<span class="string">'open-active'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">panels.forEach(<span class="function"><span class="params">panel</span> =&gt;</span> panel.addEventListener(<span class="string">'click'</span>, toggleOpen));</span><br><span class="line">panels.forEach(<span class="function"><span class="params">panel</span> =&gt;</span> panel.addEventListener(<span class="string">'transitionend'</span>, toggleActive));</span><br></pre></td></tr></table></figure>
+
+<hr>
+<br>
+## <center>相關連結</center>
+- [卡斯伯 - 圖解：CSS Flex 屬性一點也不難](https://wcc723.github.io/css/2017/07/21/css-flex/)
+- [Flex playground](https://codepen.io/enxaneta/full/adLPwv)
+- [Can I Use...?](https://caniuse.com/)
+- <a href="/Blog/2018/03/30/JavaScript30-介紹/" title="回去 JavaScript30-介紹">回去 JavaScript30-介紹</a>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/JavaScript-30/">JavaScript 30</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/JavaScript/">JavaScript</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Blog/2018/05/04/React-Redux-菜鳥實作/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          React Redux 菜鳥實作
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Blog/2018/04/16/[JS30]Day-4-Array-Cardio-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">\[JS30\] Day 4 - Array Cardio 1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目錄</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-5-Flex-Panel-Gallery"><span class="nav-number">1.</span> <span class="nav-text">Day:5 Flex Panel Gallery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flex"><span class="nav-number">2.</span> <span class="nav-text">Flex</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#display-flex"><span class="nav-number">2.1.</span> <span class="nav-text">display: flex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex"><span class="nav-number">2.2.</span> <span class="nav-text">flex</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/Blog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/Blog/tags" class="mobile-nav-link">Tags</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Greene&#39;s Blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+  <script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/Blog/js/script.js"></script>
+<script src="/Blog/js/bootstrap.js"></script>
+<script src="/Blog/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

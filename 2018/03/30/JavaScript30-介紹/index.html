@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>JavaScript30 介紹 | Greene&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="JavaScript">
+  
+  
+  
+  
+  <meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript30 介紹">
+<meta property="og:url" content="https://wizardgreen.github.io/Blog/2018/03/30/JavaScript30-介紹/index.html">
+<meta property="og:site_name" content="Greene&#39;s Blog">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/03/30/JavaScript30-介紹/cover.png">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/03/30/JavaScript30-介紹/sign.png">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/03/30/JavaScript30-介紹/download.png">
+<meta property="og:updated_time" content="2019-08-23T11:00:25.680Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript30 介紹">
+<meta name="twitter:image" content="https://wizardgreen.github.io/Blog/2018/03/30/JavaScript30-介紹/cover.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Greene&#39;s Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/Blog/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/Blog/css/style.css">
+
+  <script src="/Blog/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/Blog/css/bootstrap.css">
+  <link rel="stylesheet" href="/Blog/css/fashion.css">
+  <link rel="stylesheet" href="/Blog/css/glyphs.css">
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/Blog/" title="Greene&#39;s Blog" rel="home"> Greene&#39;s Blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/">首頁</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/archives">彙整</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/categories">分類</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/tags">標籤</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-JavaScript30-介紹" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      JavaScript30 介紹
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/Blog/2018/03/30/JavaScript30-介紹/" class="article-date">
+	  <time datetime="2018-03-30T15:32:40.000Z" itemprop="datePublished">三月 30, 2018</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/JavaScript-30/">JavaScript 30</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <img src="/Blog/2018/03/30/JavaScript30-介紹/cover.png">
+
+<a id="more"></a>
+
+<p>這是由一個加拿大的工程師 Wes Bos ，為了感謝許多人購買他的高級課程，而回饋大家的免費教學，這堂課不會使用任何 Framework、Library，三十堂課當中，一天一個作品，只使用純粹的 JavaScript 來打好你的基礎功力，如果你已經有些 HTML、CSS、JavaScript 的基礎知識，卻沒有足夠的實作經驗，那麼這個課程會是非常棒的選擇。  </p>
+<p>Okay… 以上是聽來的，這篇文章主要是我為了紀錄自己學習 JS30 的過程，而整理出來的目錄，希望能夠幫助對英文閱讀比較苦手的網友，也希望有人注意到我哪邊觀念出錯的話，麻煩幫我指正一下~  </p>
+<hr>
+<h2 id="適用對象"><a href="#適用對象" class="headerlink" title=" 適用對象 "></a><center> 適用對象 </center></h2><ul>
+<li>有基礎的 HTML、CSS、JS 能力，但不知道怎麼去做出一些網路上常見功能的入門新手。</li>
+<li>熟悉 jQuery 或 Vue 等等神奇的工具，但對 JavaScript 卻反而不熟的人。</li>
+</ul>
+<hr>
+<br>
+
+<h2 id="如何開始"><a href="#如何開始" class="headerlink" title=" 如何開始 "></a><center> 如何開始 </center></h2><p><strong>Step.1</strong><br>首先到 <strong><a href="https://javascript30.com" target="_blank" rel="noopener">JS30 官網</a></strong> 輸入 Email ，再按黃色按紐來進行註冊。</p>
+<img src="/Blog/2018/03/30/JavaScript30-介紹/sign.png">
+
+
+<p><strong>Step.2</strong><br>到信箱內收信，點選大大的藍色按紐 “Access The Course –&gt;” 就可以進入到免費課程的頁面。</p>
+<p><strong>Step.3</strong><br>接著應該可以看到 JS30 的區塊底下，會有三個黃色按鈕，功能分別如下：<br>Stream Course &gt; 課程影片、搭配等等會提到的教學檔案，跟著影片一步一步的實作練習。<br>Slack Channel &gt; Slack 上面 JS30 的討論頻道。<br>Starter File &gt; 課程檔案。</p>
+<p><strong>Step.4</strong><br>點選 Starter File 會進入到 GitHub 的頁面，點選右下方綠色的 Clone or download 就能夠選擇 Download ZIP 來下載檔案了。</p>
+<img src="/Blog/2018/03/30/JavaScript30-介紹/download.png">
+
+<p><strong>Step.5</strong><br>從步驟三提到的 Stream Course，跟著 Wes Bos 一步一步的完成每一堂課吧，如果過程中出現任何疑問，可以看下面我寫的心得記錄，也很歡迎寄信來找我討論 : )</p>
+<hr>
+<br>
+
+<h2 id="課程紀錄"><a href="#課程紀錄" class="headerlink" title=" 課程紀錄 "></a><center> 課程紀錄 </center></h2><ul>
+<li><a href="/Blog/2018/03/31/[JS30]Day-1-JavaScript-Drum-Kit/" title="Day 1: JavaScript Drum Kit">Day 1: JavaScript Drum Kit</a></li>
+<li><a href="/Blog/2018/04/03/[JS30]Day-2-JS-and-CSS-Clock/" title="Day 2: JS and CSS Clock">Day 2: JS and CSS Clock</a></li>
+<li><a href="/Blog/2018/04/10/[JS30]Day-3-CSS-Variables/" title="Day 3: CSS Variables">Day 3: CSS Variables</a></li>
+<li><a href="/Blog/2018/04/16/[JS30]Day-4-Array-Cardio-1/" title="Day 4: Array Cardio 1">Day 4: Array Cardio 1</a></li>
+<li><a href="/Blog/2018/04/23/[JS30]Day-5-Flex-Panel-Gallery/" title="Day 5: Flex Panel Gallery">Day 5: Flex Panel Gallery</a>
+</li>
+</ul>
+<hr>
+<br>
+
+<h2 id="相關連結"><a href="#相關連結" class="headerlink" title=" 相關連結 "></a><center> 相關連結 </center></h2><ul>
+<li><a href="https://javascript30.com" target="_blank" rel="noopener">JavaScript 30 官方網站</a></li>
+<li><a href="https://github.com/wesbos/JavaScript30" target="_blank" rel="noopener">GitHub 頁面</a></li>
+</ul>
+<hr>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/JavaScript-30/">JavaScript 30</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/JavaScript/">JavaScript</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Blog/2018/03/31/[JS30]Day-1-JavaScript-Drum-Kit/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          \[JS30\] Day 1 - JavaScript Drum Kit
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Blog/2018/02/17/2018-2-17/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Express use()</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目錄</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#適用對象"><span class="nav-number">1.</span> <span class="nav-text"> 適用對象 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何開始"><span class="nav-number">2.</span> <span class="nav-text"> 如何開始 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#課程紀錄"><span class="nav-number">3.</span> <span class="nav-text"> 課程紀錄 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相關連結"><span class="nav-number">4.</span> <span class="nav-text"> 相關連結 </span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/Blog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/Blog/tags" class="mobile-nav-link">Tags</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Greene&#39;s Blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+  <script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/Blog/js/script.js"></script>
+<script src="/Blog/js/bootstrap.js"></script>
+<script src="/Blog/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

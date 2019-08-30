@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>\[JS30\] Day 6 - Type Ahead | Greene&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="JavaScript">
+  
+  
+  
+  
+  <meta name="description" content="運用 ES6 帶來的的新方法取得 API 資料，在搭配前面學過的 Array Method，讓使用者在輸入文字的同時就能獲得回饋！">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="\[JS30\] Day 6 - Type Ahead">
+<meta property="og:url" content="https://wizardgreen.github.io/Blog/2018/08/30/[JS30]Day-6-Type-Ahead/index.html">
+<meta property="og:site_name" content="Greene&#39;s Blog">
+<meta property="og:description" content="運用 ES6 帶來的的新方法取得 API 資料，在搭配前面學過的 Array Method，讓使用者在輸入文字的同時就能獲得回饋！">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/08/30/[JS30]Day-6-Type-Ahead/cover.png">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/08/30/[JS30]Day-6-Type-Ahead/response.png">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/08/30/[JS30]Day-6-Type-Ahead/result.gif">
+<meta property="og:updated_time" content="2019-08-23T11:00:25.721Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="\[JS30\] Day 6 - Type Ahead">
+<meta name="twitter:description" content="運用 ES6 帶來的的新方法取得 API 資料，在搭配前面學過的 Array Method，讓使用者在輸入文字的同時就能獲得回饋！">
+<meta name="twitter:image" content="https://wizardgreen.github.io/Blog/2018/08/30/[JS30]Day-6-Type-Ahead/cover.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Greene&#39;s Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/Blog/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/Blog/css/style.css">
+
+  <script src="/Blog/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/Blog/css/bootstrap.css">
+  <link rel="stylesheet" href="/Blog/css/fashion.css">
+  <link rel="stylesheet" href="/Blog/css/glyphs.css">
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/Blog/" title="Greene&#39;s Blog" rel="home"> Greene&#39;s Blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/">首頁</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/archives">彙整</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/categories">分類</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/tags">標籤</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[JS30]Day-6-Type-Ahead" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      \[JS30\] Day 6 - Type Ahead
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/Blog/2018/08/30/[JS30]Day-6-Type-Ahead/" class="article-date">
+	  <time datetime="2018-08-30T01:19:12.000Z" itemprop="datePublished">八月 30, 2018</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/JavaScript-30/">JavaScript 30</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>運用 ES6 帶來的的新方法取得 API 資料，在搭配前面學過的 Array Method，讓使用者在輸入文字的同時就能獲得回饋！</p>
+</blockquote>
+<a id="more"></a>
+
+<img src="/Blog/2018/08/30/[JS30]Day-6-Type-Ahead/cover.png">
+
+<h2 id="Day-6-Type-Ahead"><a href="#Day-6-Type-Ahead" class="headerlink" title="Day 6: Type Ahead"></a><center>Day 6: Type Ahead</center></h2><center>預先判斷輸入內容</center>
+
+<hr>
+<h2 id="ES6-Fetch"><a href="#ES6-Fetch" class="headerlink" title="ES6 Fetch"></a><center>ES6 Fetch</center></h2><p>使用 ajax 進行資料傳輸的辦法有很多種，有些人會用 jQuery 的方法，像我則是常用 Axios 來處理繁雜的過程。但其實 ES6 本身就有一個簡化的<code>fetch()</code>可以進行 Request。一打開檔案就能看到 Wes 已經幫我們寫好了一個變數，並賦予它我們所需要的資料 url，那就直接來看如何應用到本次的題目上吧。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> endpoint = <span class="string">'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json'</span>;</span><br><span class="line"><span class="keyword">const</span> cities = [];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果先用 console.log 看過一次 fetch() ，你會發現其實會回傳一個 Promise 物件，</span></span><br><span class="line"><span class="comment">// 還不熟悉 Promise 的話，可以看下方提供的連結，好，延續先前的話題，</span></span><br><span class="line"><span class="comment">// 在知道 fetch 是 promise 之後，我們就可以用 .then() 來進行後續動作，</span></span><br><span class="line"><span class="comment">// 先用 console.log() 來瞧瞧回傳了什麼樣的資料？</span></span><br><span class="line"></span><br><span class="line">fetch(endpoint).then(<span class="function"><span class="params">res</span> =&gt;</span> <span class="built_in">console</span>.log(res));</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a href="https://wcc723.github.io/life/2017/05/25/promise/" target="_blank" rel="noopener">JavaScript ES6 Promise - 前端，沒有極限</a></li>
+<li><a href="https://eyesofkids.gitbooks.io/javascript-start-es6-promise/content/contents/basic_usage.html" target="_blank" rel="noopener">Promise物件建立與基本使用</a></li>
+</ul>
+<br>
+
+<img src="/Blog/2018/08/30/[JS30]Day-6-Type-Ahead/response.png">
+
+<center>回傳結果竟然是叫做 ReadableStream</center>
+
+<br>
+
+<p><code>fetch()</code>所回傳的結果會是一種叫做 ReadableStream 的物件，這個狀態下我們是沒辦法直接讀取的，我們得再透過幾種方法來轉換成我們需要的格式，在這裡就用 ReadableStream 內建的方法將它轉成 JSON。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fetch(endpoint)</span><br><span class="line">  .then(<span class="function"><span class="params">res</span> =&gt;</span> res.json())</span><br><span class="line">  <span class="comment">// 轉換後的結果，我們得再用一個 .then() 去進行其他操作</span></span><br><span class="line">  <span class="comment">// 就把結果資料塞入 cities 吧。</span></span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> cities.push(...data);</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>依照轉換結果我們就能得出每筆資料結構都長得像下面這個樣子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  city: <span class="string">"New York"</span>,</span><br><span class="line">  growth_from_2000_to_2013: <span class="string">"4.8%"</span>,</span><br><span class="line">  latitude: <span class="number">40.7127837</span>,</span><br><span class="line">  longitude: <span class="number">-74.0059413</span>,</span><br><span class="line">  population: <span class="string">"8405837"</span>,</span><br><span class="line">  rank: <span class="string">"1"</span>,</span><br><span class="line">  state: <span class="string">"New York"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>看來<code>city</code>與<code>state</code>正是我們需要的項目，再來就是建立過濾的函示吧！</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 預先設想這個函式要帶入 1.搜尋關鍵字 2.要搜尋的陣列</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findMatchs</span>(<span class="params">word, dataArray</span>) </span></span><br><span class="line"><span class="function">  // 使用第四章提過的 <span class="title">filter</span>(<span class="params"></span>) 方法來篩選正確結果</span></span><br><span class="line"><span class="function">  <span class="title">return</span> <span class="title">dataArray</span>.<span class="title">filter</span>(<span class="params">place =&gt; &#123;</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="regexp">//</span> 這裡我們使用到了一個之前沒提過的新東西 - 正規表達式</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="regexp">//</span> 正規表達式是一種電腦科學的概念，能夠運用簡易的字元去敘述一道規則</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="regexp">//</span> 而這個規則可以用來檢查指定的字串是否符合規則敘述。</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="regexp">//</span> 第一參數為我希望會出現的字串</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="regexp">//</span> 第二參數稱為 flag，是一種額外設定，</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="regexp">//</span> 以我們寫的內容舉例:</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="regexp">//</span> g 代表全局比對，不會在搜尋到之後就停止動作</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="regexp">//</span> i 代表忽略大小寫</span></span></span><br><span class="line"><span class="function"><span class="params">    const regex = new RegExp(word, <span class="string">'gi'</span></span>);</span></span><br><span class="line"><span class="function">    <span class="title">return</span> <span class="title">place</span>.<span class="title">city</span>.<span class="title">match</span>(<span class="params">regex</span>) || <span class="title">place</span>.<span class="title">state</span>.<span class="title">match</span>(<span class="params">regex</span>);</span></span><br><span class="line"><span class="function">  &#125;)</span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a href="http://blog.jex.tw/blog/2013/01/16/regex/" target="_blank" rel="noopener">正則表達式, 符號對照及範例 - Jex’s Note</a></li>
+<li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank" rel="noopener">正規表達式</a></li>
+</ul>
+<br>
+
+<p>再來我們建立將資料呈現至畫面上的函式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> search = <span class="built_in">document</span>.querySelector(<span class="string">".search"</span>);           <span class="comment">// 輸入匡</span></span><br><span class="line"><span class="keyword">const</span> suggestions = <span class="built_in">document</span>.querySelector(<span class="string">".suggestions"</span>); <span class="comment">// 呈現結果</span></span><br><span class="line"></span><br><span class="line">search.addEventListener(<span class="string">'change'</span>, displayMatchs);</span><br><span class="line">search.addEventListener(<span class="string">'keyup'</span>, displayMatchs);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">displayMatchs</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 因為題目需求是在 input 內輸入資料時就觸發過濾與畫面呈現，</span></span><br><span class="line">  <span class="comment">// 所以我們能預期這個函式會綁定在 input 上，</span></span><br><span class="line">  <span class="comment">// 因此能再推斷用 this.value 取出輸入的關鍵字。</span></span><br><span class="line">  <span class="keyword">const</span> matchArray = findMatchs(<span class="keyword">this</span>.value, cities);</span><br><span class="line">  <span class="comment">// 一樣是第四章出現過的陣列方法，能夠回傳長度相同的陣列</span></span><br><span class="line">  <span class="comment">// 但陣列是沒辦法直接用 innerHTML 轉化成 DOM 的</span></span><br><span class="line">  <span class="comment">// 所以我們在最後面用 join() 整合成一字串。</span></span><br><span class="line">  <span class="keyword">const</span> html = matchArray.map(<span class="function"><span class="params">place</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">      &lt;li&gt;</span></span><br><span class="line"><span class="string">        &lt;span class="name"&gt;<span class="subst">$&#123;place.city&#125;</span>, <span class="subst">$&#123;place.state&#125;</span>&lt;/span&gt;</span></span><br><span class="line"><span class="string">        &lt;span class="population"&gt;<span class="subst">$&#123;place.population&#125;</span>&lt;/span&gt;</span></span><br><span class="line"><span class="string">      &lt;/li&gt;</span></span><br><span class="line"><span class="string">    `</span></span><br><span class="line">  &#125;).join();</span><br><span class="line">  suggestions.innerHTML = html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>好~到這裡，基本的資料過濾與呈現都完成了。但是我們還缺了符合字串的 HighLight 以及人口數字的千分位符號，所以我們還要再修改一下<code>displayMatch()</code>：</p>
+<p>Hight Light 部分：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">displayMatchs</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> matchArray = findMatchs(<span class="keyword">this</span>.value, cities);</span><br><span class="line">  <span class="keyword">const</span> html = matchArray.map(<span class="function"><span class="params">place</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 組成字串的同時，再用一次正規表達式，</span></span><br><span class="line">    <span class="comment">// 將我們原本的資料用字串的方法 - replace 替換成預先寫好 CSS 的 DOM 字串</span></span><br><span class="line">    <span class="keyword">const</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="keyword">this</span>.value, <span class="string">'gi'</span>);</span><br><span class="line">    <span class="keyword">const</span> city = place.city.replace(regex, <span class="string">`&lt;span class="hl"&gt;<span class="subst">$&#123;<span class="keyword">this</span>.value&#125;</span>&lt;/span&gt;`</span>);</span><br><span class="line">    <span class="keyword">const</span> state = place.state.replace(regex, <span class="string">`&lt;span class="hl"&gt;<span class="subst">$&#123;<span class="keyword">this</span>.value&#125;</span>&lt;/span&gt;`</span>);</span><br><span class="line">    <span class="comment">// 接著一樣帶入字串中</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">      &lt;li&gt;</span></span><br><span class="line"><span class="string">        &lt;span class="name"&gt;<span class="subst">$&#123;city&#125;</span>, <span class="subst">$&#123;state&#125;</span>&lt;/span&gt;</span></span><br><span class="line"><span class="string">        &lt;span class="population"&gt;<span class="subst">$&#123;place.population&#125;</span>&lt;/span&gt;</span></span><br><span class="line"><span class="string">      &lt;/li&gt;</span></span><br><span class="line"><span class="string">    `</span>;</span><br><span class="line">  &#125;).join(<span class="string">''</span>);</span><br><span class="line">  suggestions.innerHTML = html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>千分位部分：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/ 這是正規表達式的令一種寫法，能夠以 / 中間夾帶規則... / 的方式來寫在其中。</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">numberWithCommas</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 雖然正規表達式寫起來很簡潔，但平時要記住這些規則可得花上一點功夫</span></span><br><span class="line">  <span class="comment">// 好在網路上有很多人提供常用到的過濾方式，</span></span><br><span class="line">  <span class="comment">// 像是判斷是否為 email ，或是這次的千分位，都很容易 google 到。</span></span><br><span class="line">  <span class="keyword">return</span> x.toString().replace(<span class="regexp">/\B(?=(\d&#123;3&#125;)+(?!\d))/g</span>, <span class="string">','</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 最後再把他帶入到 displayMatch() 中...</span></span><br><span class="line"> <span class="comment">// ...in displayMatch()</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;li&gt;</span></span><br><span class="line"><span class="string">      &lt;span class="name"&gt;<span class="subst">$&#123;city&#125;</span>, <span class="subst">$&#123;state&#125;</span>&lt;/span&gt;</span></span><br><span class="line"><span class="string">      &lt;span class="population"&gt;<span class="subst">$&#123;numberWithCommas(place.population)&#125;</span>&lt;/span&gt;</span></span><br><span class="line"><span class="string">    &lt;/li&gt;`</span></span><br></pre></td></tr></table></figure>
+
+<p>到這裡就大功告成囉！正規表達式不太容易上手，但習慣後可以大幅減少程式碼的量，而且在其他語言也用得到。雖然不算是第一重要，但如果有餘力的話，學起來也是非常實用的。</p>
+<br>
+
+<img src="/Blog/2018/08/30/[JS30]Day-6-Type-Ahead/result.gif">
+
+<br>
+
+<p>最後分享一下我以前自己寫的千分位函式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">onst formatWithCommas = <span class="function"><span class="params">Num</span> =&gt;</span> (</span><br><span class="line">  Num</span><br><span class="line">    .toString()</span><br><span class="line">    .splite(<span class="string">''</span>)</span><br><span class="line">    .reverse()</span><br><span class="line">    .map(<span class="function">(<span class="params">str, index, arr</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (!((index + <span class="number">1</span>) % <span class="number">3</span>) &amp;&amp; index !== arr.length - <span class="number">1</span>) &#123; str = <span class="string">`,<span class="subst">$&#123;str&#125;</span>`</span>; &#125;</span><br><span class="line">      <span class="keyword">return</span> str;</span><br><span class="line">    &#125;)</span><br><span class="line">    .reverse()</span><br><span class="line">    .join(<span class="string">''</span>);</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>哈哈，有沒有覺得正規表達式很簡潔呢？</p>
+<p>呼．．．終於又生出一篇了，這樣就不會被 <a href="https://medium.com/@linengine" target="_blank" rel="noopener">Engine</a> 說我都斷尾了 (擦汗</p>
+<hr>
+<br>
+## <center>相關連結</center>
+- [JavaScript ES6 Promise - 前端，沒有極限](https://wcc723.github.io/life/2017/05/25/promise/)
+- [Promise物件建立與基本使用](https://eyesofkids.gitbooks.io/javascript-start-es6-promise/content/contents/basic_usage.html)
+- [正則表達式, 符號對照及範例 - Jex’s Note](http://blog.jex.tw/blog/2013/01/16/regex/)
+- [正規表達式](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Regular_Expressions)
+- <a href="/Blog/2018/03/30/JavaScript30-介紹/" title="回去 JavaScript30-介紹">回去 JavaScript30-介紹</a>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/JavaScript-30/">JavaScript 30</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/JavaScript/">JavaScript</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Blog/2019/08/19/[Cordova]Run-iOS-error:-tool-xcodebuild-requires-Xcode/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          \[Cordova\] iOS 錯誤訊息 tool \&#39;xcodebuild\&#39; requires Xcode
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Blog/2018/07/16/[F2E]Week-6-Validation/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">\[F2E\] Week 6 - Validation</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目錄</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-6-Type-Ahead"><span class="nav-number">1.</span> <span class="nav-text">Day 6: Type Ahead</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6-Fetch"><span class="nav-number">2.</span> <span class="nav-text">ES6 Fetch</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/Blog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/Blog/tags" class="mobile-nav-link">Tags</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Greene&#39;s Blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+  <script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/Blog/js/script.js"></script>
+<script src="/Blog/js/bootstrap.js"></script>
+<script src="/Blog/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

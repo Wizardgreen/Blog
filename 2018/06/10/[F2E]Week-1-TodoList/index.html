@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>\[F2E\] Week 1 - TodoList | Greene&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="一個沒有刪除功能的待辦清單...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="\[F2E\] Week 1 - TodoList">
+<meta property="og:url" content="https://wizardgreen.github.io/Blog/2018/06/10/[F2E]Week-1-TodoList/index.html">
+<meta property="og:site_name" content="Greene&#39;s Blog">
+<meta property="og:description" content="一個沒有刪除功能的待辦清單...">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/06/10/[F2E]Week-1-TodoList/cover.png">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/06/10/[F2E]Week-1-TodoList/cut.png">
+<meta property="og:updated_time" content="2019-08-23T11:00:25.690Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="\[F2E\] Week 1 - TodoList">
+<meta name="twitter:description" content="一個沒有刪除功能的待辦清單...">
+<meta name="twitter:image" content="https://wizardgreen.github.io/Blog/2018/06/10/[F2E]Week-1-TodoList/cover.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Greene&#39;s Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/Blog/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/Blog/css/style.css">
+
+  <script src="/Blog/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/Blog/css/bootstrap.css">
+  <link rel="stylesheet" href="/Blog/css/fashion.css">
+  <link rel="stylesheet" href="/Blog/css/glyphs.css">
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/Blog/" title="Greene&#39;s Blog" rel="home"> Greene&#39;s Blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/">首頁</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/archives">彙整</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/categories">分類</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/tags">標籤</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[F2E]Week-1-TodoList" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      \[F2E\] Week 1 - TodoList
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/Blog/2018/06/10/[F2E]Week-1-TodoList/" class="article-date">
+	  <time datetime="2018-06-10T08:02:27.000Z" itemprop="datePublished">六月 10, 2018</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/TheF2E/">TheF2E</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center>一個沒有刪除功能的待辦清單...</center>
+<a id="more"></a>
+
+<img src="/Blog/2018/06/10/[F2E]Week-1-TodoList/cover.png">
+
+<h2 id="Week-1-TodoList"><a href="#Week-1-TodoList" class="headerlink" title="Week 1: TodoList"></a><center>Week 1: TodoList</center></h2><p><a href="https://hexschool.github.io/THE_F2E_Design/todolist/" target="_blank" rel="noopener">第一週設計稿</a></p>
+<p>幾個禮拜前，我期望的會是一個複雜的功能可以讓我好好思考該怎麼用 JS 解決這個難題。像這樣的過程總是非常吸引我，所以當看到第一題是代辦清單，讓我實在有點小小失望。不過隨後仔細看了一下老師列出的條目，就注意到其中還是有夾雜一些，我以往沒認真時做過的功能。但總體來說還是有點簡單，所以我幫自己額外擬定了一些學習項目，除了這次的第一題以外，接下來每週都會有各自的額外項目要學習。</p>
+<h2 id="自我學習項目"><a href="#自我學習項目" class="headerlink" title="自我學習項目"></a><center>自我學習項目</center></h2><ul>
+<li><p><a href="https://pugjs.org/api/getting-started.html" target="_blank" rel="noopener">Pug</a><br>一直以來我都只用過 CSS 的預處理器(Less/SCSS)，在第一次參加六角同學自行舉辦的讀書會時，我從雲龍大大那邊了解到像是 Pug 這累的 HTML 預處理器也非常直得一學，其實我自己在幾個月前有學過 ejs，但後來沒有常常使用，就給他全都忘光了。於是乎我就在心中默默地安排了這個目標。</p>
+</li>
+<li><p><a href="https://github.com/SortableJS/Vue.Draggable" target="_blank" rel="noopener">Vue.Draggable</a><br>Vue.js 的專用拖曳用套件，我從來沒做過拖曳功能，隨即上網查了一下，就發現這套似乎會是不錯的選擇。簡單好上手。</p>
+</li>
+<li><p>Flexible Component<br>這只是一個概念，在我剛到東南旅遊工作的時候(也才兩個月前)，前輩「百九」建議我在設計一個元件時，不單單只是把功能寫上、傳值而已，要多考量如何設計高彈性的自定義功能，如此一來才能讓元件能拿來反覆使用。我也透過這種思考方式學到了很多 JS 與現代框架的使用方法。</p>
+</li>
+</ul>
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a><center>解析</center></h2><p>要學習如何適當的切出元件，<a href="https://reactjs.org/docs/thinking-in-react.html" target="_blank" rel="noopener">Think in React</a>非常好的一篇教學，這裡也有簡體中文的<a href="https://chenyitian.gitbooks.io/react-docs/content/docs/thinking-in-react.html" target="_blank" rel="noopener">版本</a>，對於切元件不是很熟系的人，真的很推薦讀讀這篇文章。</p>
+<p>但對我來說，要切這麼細其實有點多餘，以下是我的切法：</p>
+<img src="/Blog/2018/06/10/[F2E]Week-1-TodoList/cut.png">
+
+<p>不同顏色的區塊個分別為一個元件，除此之外整個頁面也是一個大元件來收納底下的小元件。從設計圖上面可以得知，我們點擊輸入欄會展開一個編輯區塊，讓使用者對待辦事項寫入更詳細的內容。新增工作與代辦清單的編輯區看來可以設計成同一個元件來使用。但我隨後在實作上就發現兩個區塊傳遞的資料狀況有很多落差，最後導致我花了好多好多的時間在設計編輯區塊的元件上面。</p>
+<p>我認為自然地移動效果能夠提升使用者體驗，而這樣的使用者體驗也能大幅增加對產品的黏著度，所以我是著在操作的過程增添了許多設計圖上沒有提到的平滑效果。<br>具體來說是什麼樣的效果，還是直接<a href="https://wizardgreen.github.io/hexSchool-TheF2E-Showcase/#/week1">操作看看</a>，會比較好理解。</p>
+<p>JavaScript 的部分就沒那麼值得一提了，就是很平淡地寫完而以，所以這邊就不多贅述。<br>我有附上 Github 連結，有興趣的話我也很樂於討論 : )</p>
+<h2 id="其他連結"><a href="#其他連結" class="headerlink" title="其他連結"></a><center>其他連結</center></h2><ul>
+<li><a href="https://github.com/Wizardgreen/hexSchool-TheF2E-Showcase/" target="_blank" rel="noopener">Github 原始碼</a></li>
+<li><a href="https://wizardgreen.github.io/hexSchool-TheF2E-Showcase/#/">F2E 作品展示台</a></li>
+<li><a href="/Blog/2018/05/25/The-F2E-前端修練精神時光屋-參賽紀錄/" title="回TheF2E目錄">回TheF2E目錄</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/TheF2E/">TheF2E</a>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Blog/2018/06/18/[F2E]Week-2-Filter/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          \[F2E\] Week 2 - Filter
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Blog/2018/05/25/The-F2E-前端修練精神時光屋-參賽紀錄/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">The F2E - 精神時光屋 參賽記事</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目錄</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Week-1-TodoList"><span class="nav-number">1.</span> <span class="nav-text">Week 1: TodoList</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自我學習項目"><span class="nav-number">2.</span> <span class="nav-text">自我學習項目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解析"><span class="nav-number">3.</span> <span class="nav-text">解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他連結"><span class="nav-number">4.</span> <span class="nav-text">其他連結</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/Blog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/Blog/tags" class="mobile-nav-link">Tags</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Greene&#39;s Blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+  <script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/Blog/js/script.js"></script>
+<script src="/Blog/js/bootstrap.js"></script>
+<script src="/Blog/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

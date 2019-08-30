@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>\[JS30\] Day 1 - JavaScript Drum Kit | Greene&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="JavaScript">
+  
+  
+  
+  
+  <meta name="description" content="透過 JavaScript 製作一個簡易的打擊樂器。">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="\[JS30\] Day 1 - JavaScript Drum Kit">
+<meta property="og:url" content="https://wizardgreen.github.io/Blog/2018/03/31/[JS30]Day-1-JavaScript-Drum-Kit/index.html">
+<meta property="og:site_name" content="Greene&#39;s Blog">
+<meta property="og:description" content="透過 JavaScript 製作一個簡易的打擊樂器。">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/03/31/[JS30]Day-1-JavaScript-Drum-Kit/cover.png">
+<meta property="og:updated_time" content="2019-08-23T11:00:25.711Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="\[JS30\] Day 1 - JavaScript Drum Kit">
+<meta name="twitter:description" content="透過 JavaScript 製作一個簡易的打擊樂器。">
+<meta name="twitter:image" content="https://wizardgreen.github.io/Blog/2018/03/31/[JS30]Day-1-JavaScript-Drum-Kit/cover.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Greene&#39;s Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/Blog/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/Blog/css/style.css">
+
+  <script src="/Blog/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/Blog/css/bootstrap.css">
+  <link rel="stylesheet" href="/Blog/css/fashion.css">
+  <link rel="stylesheet" href="/Blog/css/glyphs.css">
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/Blog/" title="Greene&#39;s Blog" rel="home"> Greene&#39;s Blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/">首頁</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/archives">彙整</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/categories">分類</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/tags">標籤</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[JS30]Day-1-JavaScript-Drum-Kit" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      \[JS30\] Day 1 - JavaScript Drum Kit
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/Blog/2018/03/31/[JS30]Day-1-JavaScript-Drum-Kit/" class="article-date">
+	  <time datetime="2018-03-30T17:39:35.000Z" itemprop="datePublished">三月 31, 2018</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/JavaScript-30/">JavaScript 30</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center>透過 JavaScript 製作一個簡易的打擊樂器。</center>
+
+<a id="more"></a>
+
+<img src="/Blog/2018/03/31/[JS30]Day-1-JavaScript-Drum-Kit/cover.png">
+
+<h2 id="Day-1-JavaScript-Drum-Kit"><a href="#Day-1-JavaScript-Drum-Kit" class="headerlink" title="Day 1: JavaScript Drum Kit"></a><center>Day 1: JavaScript Drum Kit</center></h2><h2 id="檔案結構"><a href="#檔案結構" class="headerlink" title="檔案結構"></a><center>檔案結構</center></h2><h3 id="data"><a href="#data" class="headerlink" title="data-*"></a>data-*</h3><p>首先我們觀察 HTML 內的元素，不難發現每個 <code>.Key</code> 能搭配一個 <code>audio</code> ，藉由相同的<code>data-key</code>兩兩成一組。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-key</span>=<span class="string">"65"</span> <span class="attr">class</span>=<span class="string">"key"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">kbd</span>&gt;</span>A<span class="tag">&lt;/<span class="name">kbd</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"sound"</span>&gt;</span>clap<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">data-key</span>=<span class="string">"65"</span> <span class="attr">src</span>=<span class="string">"sounds/clap.wav"</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>data-* 是一種讓開發者自定義的屬性， * 可以自訂名稱，接著透過 JS 將資料取出運用，藉由這些能自由嵌入的資訊，可以實踐許多功能。更多 data-* 的詳細資訊可以參考 <a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Global_attributes/data-*" target="_blank" rel="noopener">MDN 的 data-* 介紹頁面</a>。</p>
+<h3 id="KeyCode"><a href="#KeyCode" class="headerlink" title="KeyCode"></a>KeyCode</h3><p>每一個鍵盤上的按鍵對電腦來說都對應的一組數字，電腦是透過接收到這組數字才能判斷使用者是按下什麼樣的按鍵。想知道每個按鍵的編碼可以透過，下面的程式碼來查詢 ：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'keydown'</span>, e =&gt; <span class="built_in">console</span>.log(e.keyCode));</span><br><span class="line"><span class="comment">// 監聽每一個 keydown 事件，觸發後透過控制台顯示出按下的 keyCode</span></span><br></pre></td></tr></table></figure>
+
+<p>或簡單一點，直接透過 <a href="http://keycode.info" target="_blank" rel="noopener">JavaScript Event Keycode</a> 來查詢，只要按下按鍵，畫面中間就會跳出對應的數字。細心一點就不難發現，上面每一個<code>data-key=&quot;...&quot;</code>的數字就是對應著同一層<code>&lt;kbd&gt;</code>內的英文字</p>
+<hr>
+<h2 id="播放功能"><a href="#播放功能" class="headerlink" title="播放功能"></a><center>播放功能</center></h2><p>一般來說我們會把 JS 另外寫成一個獨立的檔案方便管理，但因為這是教學課程，所以我們就先忽略這個部分，直接將程式寫在 HTML 裡面 ：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span>...<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--建議將 Script 寫在 body 最末端--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>由於 HTML 是由上往下載入的，所以當需要把程式寫在 HTML 檔案內的話，建議將 <code>&lt;script&gt;</code> 寫在 <code>&lt;body&gt;</code> 的最末端，避免 JS 抓不到 HTML 的結構。</p>
+<h3 id="Step1-建立事件監聽器"><a href="#Step1-建立事件監聽器" class="headerlink" title="Step1 : 建立事件監聽器"></a>Step1 : 建立事件監聽器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'keydown'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123; </span><br><span class="line">  <span class="built_in">console</span>.log(e.keyCode)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>為了確定我們的按鍵能夠正確的觸發，先加入一個<code>console.log(e.keyCode)</code>來判斷有無正常運作，順便看看 KeyCode 有無正確。這是一個非常重要的習慣，建議每個開發者每一小段都可以運用 <code>console.log()</code> 來進行檢查，避免到時出一堆錯誤卻無從找起。確認無誤的話，接著教學的速度就會變快一點囉。</p>
+<h3 id="Step2-寫入播放功能"><a href="#Step2-寫入播放功能" class="headerlink" title="Step2 : 寫入播放功能"></a>Step2 : 寫入播放功能</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'keydown'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123; </span><br><span class="line">  <span class="keyword">const</span> audio = <span class="built_in">document</span>.querySelector(<span class="string">`audio[data-key="<span class="subst">$&#123;e.keyCode&#125;</span>"]`</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!audio) &#123;<span class="keyword">return</span>&#125; <span class="comment">// 如果指定的 audio 不存在，中斷整個 function 。</span></span><br><span class="line">  audio.play(); <span class="comment">// 影片、音樂可以透過 .play() 來撥放。 </span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>當按下畫面上的按鍵，就會撥方出對應的聲音囉!  不過這樣還不夠完美，如果你連續點擊同樣按鈕，就會發現在一段音效結束之前，不會再撥第二次，這一點都不像打擊樂器阿，騙我。</p>
+<h3 id="Step3-audio-currentTime"><a href="#Step3-audio-currentTime" class="headerlink" title="Step3 : audio.currentTime"></a>Step3 : audio.currentTime</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">audio.currentTime = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<p>我們在<code>audio.play()</code>前面加入這段，就可以在每次觸發事件的同時，將音效的時間重置為 0 秒，也就是重頭播放。同樣的原理也可以運用在影片上面喔。</p>
+<hr>
+<h2 id="視覺效果"><a href="#視覺效果" class="headerlink" title="視覺效果"></a><center>視覺效果</center></h2><h3 id="Step1-加入特效"><a href="#Step1-加入特效" class="headerlink" title="Step1 : 加入特效"></a>Step1 : 加入特效</h3><p>我們從 style.css 裡面可以注意到有一個 .playing 並沒有在 HTML 當中被使用，這個就是老師提供的播放特效。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> audio = <span class="built_in">document</span>.querySelector(<span class="string">`audio[data-key="<span class="subst">$&#123;e.keyCode&#125;</span>"]`</span>);</span><br><span class="line"><span class="keyword">const</span> key = <span class="built_in">document</span>.querySelector(<span class="string">`.key[data-key="<span class="subst">$&#123;e.keyCode&#125;</span>"]`</span>); <span class="comment">// 選擇對應 keyCode 的 .key</span></span><br><span class="line"><span class="keyword">if</span> (!audio) &#123;<span class="keyword">return</span>&#125;; <span class="comment">// 如果找不到對應的 audio，則中斷 function</span></span><br><span class="line">audio.currentTime = <span class="number">0</span>;</span><br><span class="line">audio.play();</span><br><span class="line">key.classList.add(<span class="string">'playing'</span>); <span class="comment">// 在撥放後加上 .playing</span></span><br></pre></td></tr></table></figure>
+
+<p><code>.classList</code>是個很常用的功能，除了加入新 Class 也可以用<code>classList.remove(&#39;style&#39;)</code>的方式來移除不要的 Class。</p>
+<h3 id="Step2-還原特效"><a href="#Step2-還原特效" class="headerlink" title="Step2 : 還原特效"></a>Step2 : 還原特效</h3><p>現在我們在按下按鍵之後，已經能看到 <code>div.key</code> 會跑出特效了，但他就這樣卡住，不會變回原本的樣子了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setTimeout( <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  key.classList.remove(<span class="string">'playing'</span>);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+
+<p>當然我們可以透過一個很簡單的<code>setTimeout()</code>來在幾秒後移除掉原本加入的 Class，可是這樣有一個問題，如果今天設計師改變了原本動畫的時間怎麼辦? 如果今天撥放的特效變的比你設定的時間還要長，那不就又要在這些數字上做微調了嗎? 煩都煩死啦~</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> keys = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.key'</span>); </span><br><span class="line"><span class="comment">// 使用 querySelectorAll 選擇所有的 .key</span></span><br><span class="line"></span><br><span class="line">keys.forEach(<span class="function"><span class="params">key</span> =&gt;</span> key.addEventListener(<span class="string">'transitionend'</span>, removeTransition));</span><br><span class="line"><span class="comment">// 事件監聽器只能對單一的 node 產生作用，而 querySelectorAll 的結果會是一個陣列，</span></span><br><span class="line"><span class="comment">// 因此我們要用 forEach() 來監聽陣列內的每個節點。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeTransition</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (e.propertyName !== <span class="string">'transform'</span>) <span class="keyword">return</span>; <span class="comment">// 詳見下方說明</span></span><br><span class="line">  <span class="keyword">this</span>.classList.remove(<span class="string">'playing'</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>建立一個新的變數，還有新的事件監聽器，這裡我們用到一個比較沒那麼常見的事件<code>transitionend</code>，也就是網頁上有 css Transition 結束時，會觸發的事件。<br>如果我們在 function 裡面使用<code>console.log(e)</code>就能發現一次 Transition 結束會有好幾個相關的<code>transitionend</code>事件，但我們只需要一個就可以移除掉 Class，因此我們就用到上面提過的 <code>if (true) {return}</code>，隨便選一個事件來繼續我們要做的事情，將其他的都中斷。</p>
+<p>一般來說<code>this</code>會指向<code>window</code>，但在這裡<code>this</code>會指到觸發這個事件的節點，舉例來說我按下 A ，那麼<code>this</code>就會是<code>&lt;div data-key=&quot;65&quot; class=&quot;key&quot;&gt;&lt;/div&gt;</code>，可以多多運用<code>console.log(this)</code>來了解一下在什麼情況會指向哪裡。<br>(特別要注意一下，如果使用的是 ES6 的 Arrow function ，那麼 <code>this</code> 還是會指向 <code>window</code>)</p>
+<h3 id="Step3-整理"><a href="#Step3-整理" class="headerlink" title="Step3 : 整理"></a>Step3 : 整理</h3><p>到這裡基本上功能都寫好囉，不過身為一個良好的前端工程師，我們還要把 code 整理的清晰有條理才行，不然不用說你的同事，搞不好自己幾個月後要回來修改程式碼，也要花上好一段時間才能讀懂。<br>基本上我們移除特效的寫法已經很清楚了，一個常數、一個監聽器、一個 function，非常好懂 !<br>我們只要再回頭整理一下一開始寫的播放功能就好 ：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'keydown'</span>, playSound); </span><br><span class="line"><span class="comment">// 將監聽器與 function 分離，讓 code 更容易閱讀。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">playSound</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> audio = <span class="built_in">document</span>.querySelector(<span class="string">`audio[data-key="<span class="subst">$&#123;e.keyCode&#125;</span>"]`</span>);</span><br><span class="line">  <span class="keyword">const</span> key = <span class="built_in">document</span>.querySelector(<span class="string">`.key[data-key="<span class="subst">$&#123;e.keyCode&#125;</span>"]`</span>);</span><br><span class="line">  <span class="keyword">if</span> (!audio) &#123;<span class="keyword">return</span>&#125;;</span><br><span class="line">  audio.currentTime = <span class="number">0</span>;</span><br><span class="line">  audio.play();</span><br><span class="line">  key.classList.add(<span class="string">'playing'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>好啦! 到這裡，這次的課程就結束囉，回想一下實作的過程中有沒有比較不了解的地方，反覆練習就能夠精進自己囉。</p>
+<hr>
+<h2 id="Full-Script"><a href="#Full-Script" class="headerlink" title="Full Script"></a><center>Full Script</center></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'keydown'</span>, playSound);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">playSound</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> audio = <span class="built_in">document</span>.querySelector(<span class="string">`audio[data-key="<span class="subst">$&#123;e.keyCode&#125;</span>"]`</span>);</span><br><span class="line">  <span class="keyword">const</span> key = <span class="built_in">document</span>.querySelector(<span class="string">`.key[data-key="<span class="subst">$&#123;e.keyCode&#125;</span>"]`</span>);</span><br><span class="line">  <span class="keyword">if</span> (!audio) &#123;<span class="keyword">return</span>&#125;; <span class="comment">// 如果找不到對應的 audio，則中斷 function</span></span><br><span class="line">  audio.currentTime = <span class="number">0</span>;</span><br><span class="line">  audio.play();</span><br><span class="line">  key.classList.add(<span class="string">'playing'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 播放後移除動畫效果</span></span><br><span class="line"><span class="keyword">const</span> keys = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.key'</span>);</span><br><span class="line">keys.forEach(<span class="function"><span class="params">key</span> =&gt;</span> key.addEventListener(<span class="string">'transitionend'</span>, removeTransition));</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeTransition</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (e.propertyName !== <span class="string">'transform'</span>) &#123;<span class="keyword">return</span>&#125;;</span><br><span class="line">  <span class="keyword">this</span>.classList.remove(<span class="string">'playing'</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="相關連結"><a href="#相關連結" class="headerlink" title="相關連結"></a><center>相關連結</center></h2><ul>
+<li><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Global_attributes/data-*" target="_blank" rel="noopener">MDN data-* 介紹頁面</a></li>
+<li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="noopener">MDN this 介紹頁面</a></li>
+<li><a href="http://keycode.info" target="_blank" rel="noopener">JavaScript Event Keycode</a></li>
+<li><a href="/Blog/2018/03/30/JavaScript30-介紹/" title="回去 JavaScript30-介紹">回去 JavaScript30-介紹</a></li>
+<li><a href="/Blog/2018/04/03/[JS30]Day-2-JS-and-CSS-Clock/" title="繼續 Day2">繼續 Day2</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/JavaScript-30/">JavaScript 30</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/JavaScript/">JavaScript</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Blog/2018/04/02/2018-前端面試心得/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          2018 前端自學&amp;面試心得
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Blog/2018/03/30/JavaScript30-介紹/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript30 介紹</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目錄</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1-JavaScript-Drum-Kit"><span class="nav-number">1.</span> <span class="nav-text">Day 1: JavaScript Drum Kit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#檔案結構"><span class="nav-number">2.</span> <span class="nav-text">檔案結構</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#data"><span class="nav-number">2.1.</span> <span class="nav-text">data-*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KeyCode"><span class="nav-number">2.2.</span> <span class="nav-text">KeyCode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#播放功能"><span class="nav-number">3.</span> <span class="nav-text">播放功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-建立事件監聽器"><span class="nav-number">3.1.</span> <span class="nav-text">Step1 : 建立事件監聽器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-寫入播放功能"><span class="nav-number">3.2.</span> <span class="nav-text">Step2 : 寫入播放功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-audio-currentTime"><span class="nav-number">3.3.</span> <span class="nav-text">Step3 : audio.currentTime</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#視覺效果"><span class="nav-number">4.</span> <span class="nav-text">視覺效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-加入特效"><span class="nav-number">4.1.</span> <span class="nav-text">Step1 : 加入特效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-還原特效"><span class="nav-number">4.2.</span> <span class="nav-text">Step2 : 還原特效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-整理"><span class="nav-number">4.3.</span> <span class="nav-text">Step3 : 整理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Full-Script"><span class="nav-number">5.</span> <span class="nav-text">Full Script</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相關連結"><span class="nav-number">6.</span> <span class="nav-text">相關連結</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/Blog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/Blog/tags" class="mobile-nav-link">Tags</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Greene&#39;s Blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+  <script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/Blog/js/script.js"></script>
+<script src="/Blog/js/bootstrap.js"></script>
+<script src="/Blog/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

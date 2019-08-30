@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>\[F2E\] Week 3 - AdminOrder | Greene&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="管理後台">
+<meta property="og:type" content="article">
+<meta property="og:title" content="\[F2E\] Week 3 - AdminOrder">
+<meta property="og:url" content="https://wizardgreen.github.io/Blog/2018/06/24/[F2E]Week-3-AdminOrder/index.html">
+<meta property="og:site_name" content="Greene&#39;s Blog">
+<meta property="og:description" content="管理後台">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/06/24/[F2E]Week-3-AdminOrder/cover.png">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2018/06/24/[F2E]Week-3-AdminOrder/wtf.png">
+<meta property="og:updated_time" content="2019-08-23T11:00:25.698Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="\[F2E\] Week 3 - AdminOrder">
+<meta name="twitter:description" content="管理後台">
+<meta name="twitter:image" content="https://wizardgreen.github.io/Blog/2018/06/24/[F2E]Week-3-AdminOrder/cover.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Greene&#39;s Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/Blog/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/Blog/css/style.css">
+
+  <script src="/Blog/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/Blog/css/bootstrap.css">
+  <link rel="stylesheet" href="/Blog/css/fashion.css">
+  <link rel="stylesheet" href="/Blog/css/glyphs.css">
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/Blog/" title="Greene&#39;s Blog" rel="home"> Greene&#39;s Blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/">首頁</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/archives">彙整</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/categories">分類</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/tags">標籤</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[F2E]Week-3-AdminOrder" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      \[F2E\] Week 3 - AdminOrder
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/Blog/2018/06/24/[F2E]Week-3-AdminOrder/" class="article-date">
+	  <time datetime="2018-06-24T11:25:46.000Z" itemprop="datePublished">六月 24, 2018</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/TheF2E/">TheF2E</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center>管理後台</center>
+<a id="more"></a>
+
+<img src="/Blog/2018/06/24/[F2E]Week-3-AdminOrder/cover.png">
+
+<h2 id="Week-3-AdminOrder"><a href="#Week-3-AdminOrder" class="headerlink" title="Week 3: AdminOrder"></a><center>Week 3: AdminOrder</center></h2><p><a href="https://hexschool.github.io/THE_F2E_Design/week3-admin%20order/" target="_blank" rel="noopener">第三週設計稿</a></p>
+<p><a href="https://wizardgreen.github.io/hexSchool-TheF2E-Showcase/#/week3">完成作品連結</a></p>
+<p>以活動條件來說，我是達標了，但以我自己的要求來說，本週是徹徹底底的大失敗，覺得有點小難過 Orz. 不過這次題目的難度一口氣上升一大截，應該很多人都沒辦法在時間內完全攻略這次的題目。特別是 API 的部分，到底要去哪裡找可以涵蓋這麼多東西的 API 勒 ＱＱ</p>
+<p>最後我打算交出 CSS 達成最基本條件就好，但在交出前看著我用的三個主色，突然靈機一動，<br>馬上找 Github API 串起來把首頁做成三大 SPA 框架的 Star 比較圖 XD不過太臨時了沒辦法弄完，還是有點可惜，如果能再加上 commit 紀錄 與 star 走勢圖那就更棒了！</p>
+<h2 id="自我學習項目"><a href="#自我學習項目" class="headerlink" title="自我學習項目"></a><center>自我學習項目</center></h2><ul>
+<li><a href="https://vuetifyjs.com/en/" target="_blank" rel="noopener">Vuetify</a> - 挑戰失敗</li>
+</ul>
+<p>Material Design 風格的 Vue 外觀框架其實蠻多的， Vuetify 在我看來是比較脫穎而出的一款，不論維護或社群互動都有一定的熱度，我也早在去年就持續官網這款套件。但實際寫起來覺得 Document 不怎麼好上手，彈性也不是很高，特別是排版設定上會使 HTML 的標籤層數過於複雜，何況我還是用 Pug 來撰寫的，換回原生 HTML 可能對我來說會是一場災難。<br>會歸類為失敗主要是因為 style 嚴重覆蓋了我原先寫好的作品…</p>
+<img src="/Blog/2018/06/24/[F2E]Week-3-AdminOrder/wtf.png">
+<p>看來我還是以後有其他全新專案再來玩玩看這些潮到出水的 Material Design 吧 ＱＱ</p>
+<br>
+
+<ul>
+<li><a href="http://www.chartjs.org/" target="_blank" rel="noopener">Chart.js</a></li>
+</ul>
+<p>聞名已久的圖表套件，官網配色實在太美拉，美到我就直接決定用他的色系作為這週作品的色調。套件本身的功能也很好上手!只要在 HTML 上放個 Canvas ，再把資料套上去就完工了～</p>
+<p>以我這次題目的圖表來說，只要下方的 code 就能輕鬆達成：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 選擇要哪種類型的圖表</span></span><br><span class="line">type: <span class="string">'line'</span>,</span><br><span class="line">chartData: &#123;</span><br><span class="line">  <span class="comment">// 標籤資料，作為圖表下方的對照資訊</span></span><br><span class="line">  labels: [<span class="string">'January'</span>, <span class="string">'February'</span>, <span class="string">'March'</span>, <span class="string">'April'</span>, <span class="string">'May'</span>, <span class="string">'June'</span>, <span class="string">'July'</span>, <span class="string">'August'</span>, <span class="string">'September'</span>, <span class="string">'October'</span>, <span class="string">'November'</span>, <span class="string">'December'</span>],</span><br><span class="line">  datasets: [</span><br><span class="line">    <span class="comment">// 資料組，也就是要視覺化的資料，我總共做了三組，所以就只 show 一個</span></span><br><span class="line">    &#123;</span><br><span class="line">      label: <span class="string">'Vue'</span>,</span><br><span class="line">      backgroundColor: <span class="string">'rgba(81, 192, 191, .6)'</span>,</span><br><span class="line">      borderColor: <span class="string">'rgba(81, 192, 191)'</span>,</span><br><span class="line">      borderWidth: <span class="string">'1px'</span>,</span><br><span class="line">      data: [<span class="number">40</span>, <span class="number">20</span>, <span class="number">12</span>, <span class="number">39</span>, <span class="number">25</span>, <span class="number">40</span>, <span class="number">39</span>, <span class="number">20</span>, <span class="number">40</span>, <span class="number">20</span>, <span class="number">12</span>, <span class="number">11</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>是不是很簡單rrrr，我也好興奮啊啊啊！<br><a href="http://www.chartjs.org/samples/latest/" target="_blank" rel="noopener">官網</a>也提供了好多不同的範本，不只圖表，也可以利用各種數據作出炫砲的效果!</p>
+<br>
+
+<ul>
+<li><a href="https://github.com/apertureless/vue-chartjs" target="_blank" rel="noopener">Vue-chart.js</a></li>
+</ul>
+<p>我沒有事先作太多功課，就直接挑了這款在 github 上星星比較多的套件。顧名思義，就是以 chart.js 為底，製作成 Vue 的元件來反覆使用，不過建議還是先把 Chart.js 給弄懂再來搭配這個套件，才不會在 documnet 卡太久。</p>
+<br>
+
+<ul>
+<li><a href="https://github.com/marak/Faker.js/" target="_blank" rel="noopener">Faker.js</a></li>
+</ul>
+<p>又是一個簡易又強大的套件，提供了非常多樣化的 API 能夠幫前端生出許多假資料，如此一來前端就可以不需要串接資料就能呈現網站囉。如果覺得麻煩，也有特定的 API 可以產生一整組的 userCard 或其他常見的資料類型，非常直得一學。</p>
+<br>
+
+<ul>
+<li><a href="https://github.com/typicode/json-server" target="_blank" rel="noopener">JSON Sever</a></li>
+</ul>
+<p>將 JSON 模擬成伺服器，也就是說只要有 JSON 檔，就算後端提供的 API 壞掉了，也可以直接撰寫 AJAX 模擬與伺服器串接。如果再搭配前面的 Faker.js ，更是如虎添翼啊！ <del>誰還需要後端</del> 這種想法姆湯姆湯…</p>
+<br>
+
+<ul>
+<li><a href="http://element.eleme.io/#/zh-CN" target="_blank" rel="noopener">Element</a></li>
+</ul>
+<p>發現 Vuetify 沒辦法套用在作品上之後，我隨即找上了這款套件，Element 應該是中國目前 Vue 社群內最大宗的外觀套件了，外觀風格中規中局，整體來說都算優秀。但是 document 非常平易近人，我到最後三天整個打掉重做，最後還能趕上交件，這麼容易上手又不會有什麼錯誤，難怪能成為目前最主流的外觀套件。</p>
+<br>
+
+<h2 id="第三週感想"><a href="#第三週感想" class="headerlink" title="第三週感想"></a><center>第三週感想</center></h2><p>這週真是跌跌撞撞的，時而氣餒時而興奮 (情緒這麼極端，是小孩子嗎XD)<br>我原本在上週就打算學 Element 快速搭建這次作品的輪廓，但實在受不了 Material Design 潮到不行的風格而跑去學 Vuetify，好不容易啃了很難理解的文件，結果卻遇到相容信的死胡同，繞了一大圈又打掉重做，好險 Element 基本上跟 Bootstrap 一樣平易近人，挽救了整個局面。</p>
+<p>可惜這週在 TypeScript 上並沒有太多的進步，也沒有其他更深入的 JS 學習。取而代之的，我學了許多小型套件，還有超棒的 Chart.js！這讓我更期待再過一陣子要跟<a href="https://hexadecimalteachblog.github.io/" target="_blank" rel="noopener">十六進位</a>的夥伴們一起學習得 D3.js 了！</p>
+<p>我發現隨著活動作品越來越多， Vuex store 也漸漸龐大起來，我應該需要花點心思整理一下檔案結構，希望下週我能讀上幾篇相關的討論，並且整理出自己最合適的方法。如果時間允許的話，我也想要把<code>vue-property-decorator</code>納入專案中，能夠使用很酷的 Decorator 來撰寫 prop、watch 等功能，簡單了解一下，雖然不是官方開發的套件，但似乎在社群的推薦度是蠻高的，真令人期待。</p>
+<h2 id="其他連結"><a href="#其他連結" class="headerlink" title="其他連結"></a><center>其他連結</center></h2><ul>
+<li><a href="https://github.com/Wizardgreen/hexSchool-TheF2E-Showcase/" target="_blank" rel="noopener">Github 原始碼</a></li>
+<li><a href="https://wizardgreen.github.io/hexSchool-TheF2E-Showcase/#/">F2E 作品展示台</a></li>
+<li><a href="/Blog/2018/05/25/The-F2E-前端修練精神時光屋-參賽紀錄/" title="回TheF2E目錄">回TheF2E目錄</a>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/TheF2E/">TheF2E</a>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Blog/2018/07/01/[F2E]Week-4-ProductGallery/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          \[F2E\] Week 4 - ProductGallery
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Blog/2018/06/18/[F2E]Week-2-Filter/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">\[F2E\] Week 2 - Filter</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目錄</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Week-3-AdminOrder"><span class="nav-number">1.</span> <span class="nav-text">Week 3: AdminOrder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自我學習項目"><span class="nav-number">2.</span> <span class="nav-text">自我學習項目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三週感想"><span class="nav-number">3.</span> <span class="nav-text">第三週感想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他連結"><span class="nav-number">4.</span> <span class="nav-text">其他連結</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/Blog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/Blog/tags" class="mobile-nav-link">Tags</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Greene&#39;s Blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+  <script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/Blog/js/script.js"></script>
+<script src="/Blog/js/bootstrap.js"></script>
+<script src="/Blog/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
