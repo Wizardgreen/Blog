@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>裝扮你的 Range Input | Greene&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="CSSHTML">
+  
+  
+  
+  
+  <meta name="description" content="原生 Range Input 醜死啦">
+<meta name="keywords" content="CSS,HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="裝扮你的 Range Input">
+<meta property="og:url" content="https://wizardgreen.github.io/Blog/2019/10/21/[CSS]裝扮你的RangeInput/index.html">
+<meta property="og:site_name" content="Greene&#39;s Blog">
+<meta property="og:description" content="原生 Range Input 醜死啦">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2019/10/21/[CSS]裝扮你的RangeInput/design.png">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2019/10/21/[CSS]裝扮你的RangeInput/goal.png">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2019/10/21/[CSS]裝扮你的RangeInput/wrong.png">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2019/10/21/[CSS]裝扮你的RangeInput/notsogood.png">
+<meta property="og:updated_time" content="2019-10-21T06:49:25.346Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="裝扮你的 Range Input">
+<meta name="twitter:description" content="原生 Range Input 醜死啦">
+<meta name="twitter:image" content="https://wizardgreen.github.io/Blog/2019/10/21/[CSS]裝扮你的RangeInput/design.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Greene&#39;s Blog" type="application/atom+xml">
+  
+  <link rel="icon" href="/Blog/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/Blog/css/style.css">
+
+  <script src="/Blog/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/Blog/css/bootstrap.css">
+  <link rel="stylesheet" href="/Blog/css/fashion.css">
+  <link rel="stylesheet" href="/Blog/css/glyphs.css">
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/Blog/" title="Greene&#39;s Blog" rel="home"> Greene&#39;s Blog </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/">首頁</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/archives">彙整</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/categories">分類</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/Blog/tags">標籤</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-[CSS]裝扮你的RangeInput" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      裝扮你的 Range Input
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/Blog/2019/10/21/[CSS]裝扮你的RangeInput/" class="article-date">
+	  <time datetime="2019-10-21T06:44:27.000Z" itemprop="datePublished">十月 21, 2019</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/Note/">Note</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原生 Range Input 醜死啦</p>
+<a id="more"></a>
+
+<h2 id="緣起"><a href="#緣起" class="headerlink" title="緣起"></a><center>緣起</center></h2><p>現在待的公司是以高複雜度的系統網站，作為主要的工作項目，都是在寫共用元件、各種 React&amp;Redux 邏輯。一轉眼過了九個月，看著設計師的新稿，突然發現到上面的 Range Input 有個我不會實作細節，我才突然驚覺這段時間並沒有學習更多的 CSS 技巧。</p>
+<img src="/Blog/2019/10/21/[CSS]裝扮你的RangeInput/design.png">
+
+<center>我不知道怎麼實作拖曳左方的白色線條</center>
+<center>其實我根本忘記怎麼修改 range input...</center>
+
+<hr>
+<br>
+
+<h2 id="實作"><a href="#實作" class="headerlink" title="實作"></a><center>實作</center></h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="range"]</span><span class="selector-pseudo">::-moz-range-progress</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: green;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">1em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>完工！！！<br>沒有，騙你的。<br>這種被騙的心情就跟當初 Google 如何實作的我一樣，<br>但仔細看 MDN 上會解釋說這項功能還沒實作好…只能怪自己粗心…</p>
+<hr>
+<br>
+
+<h2 id="真。實作"><a href="#真。實作" class="headerlink" title="真。實作"></a><center>真。實作</center></h2><p>我們要用<code>scss</code>實作下圖的 range input.</p>
+
+
+<hr>
+<br>
+
+<h3 id="step1-打底"><a href="#step1-打底" class="headerlink" title="step1 - 打底"></a>step1 - 打底</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"range"</span> <span class="attr">value</span>=<span class="string">"20"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// SCSS</span></span><br><span class="line"><span class="comment">// 首先學習新屬性 "appearance", 可以將目標實作為指定 Tag 的外型</span></span><br><span class="line"><span class="comment">// ex: div 給他 apperance: button， 他就會看起來像是個 default button</span></span><br><span class="line"><span class="comment">// 如果值為 none 則消除原有外觀.</span></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="range"]</span> &#123;</span><br><span class="line">  -webkit-appearance: none;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background</span>: none; <span class="comment">// 清除不必要的東西</span></span><br><span class="line">  <span class="attribute">outline</span>: none; <span class="comment">// 清除不必要的東西</span></span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">0</span>; <span class="comment">// 清除不必要的東西</span></span><br><span class="line">  <span class="attribute">overflow</span>: hidden; <span class="comment">// 晚點會用到</span></span><br><span class="line">  <span class="attribute">cursor</span>: pointer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>只是<code>appearance</code>並不是支援度很完整的屬性，在實作的時候記得要加上對應的前綴詞，<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/appearance" target="_blank" rel="noopener">細節看這</a>。<br>我們這篇都只用<code>-webkit-</code>實作，以防 code 太多讓人混亂.</p>
+<hr>
+<br>
+
+<h3 id="step2-認識新朋友"><a href="#step2-認識新朋友" class="headerlink" title="step2 - 認識新朋友"></a>step2 - 認識新朋友</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="range"]</span> &#123;</span><br><span class="line">  <span class="comment">// ...上略</span></span><br><span class="line">  <span class="comment">// 是能調整 input 後方那一條狀物的朋友</span></span><br><span class="line">  &amp;::-webkit-slider-runnable-track &#123;</span><br><span class="line">    background-color: <span class="number">#ddd</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 是能調整拖曳鈕的朋友</span></span><br><span class="line">  &amp;::-webkit-slider-thumb &#123;</span><br><span class="line">    -webkit-appearance: none; <span class="comment">// 一樣要消除</span></span><br><span class="line">    <span class="attribute">width</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<br>
+
+<h3 id="step-3-box-shadow"><a href="#step-3-box-shadow" class="headerlink" title="step 3 - box-shadow"></a>step 3 - box-shadow</h3><p>最後是我們能做出像進度條的關鍵 - <code>box-shadow</code></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="range"]</span> &#123;</span><br><span class="line">  <span class="comment">// ...略</span></span><br><span class="line">  &amp;::-webkit-slider-thumb &#123;</span><br><span class="line">    // ...略</span><br><span class="line">    box-shadow: -<span class="number">100vw</span> <span class="number">0</span> <span class="number">0</span> <span class="number">100vw</span> <span class="number">#69eaab</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>copy, paste and… done!但你清楚這是怎麼運作的嗎？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">box-shadow: -100vw   | 0        | 0           | 100vw         | #69eaab;</span><br><span class="line">box-shadow: offset-x | offset-y | blur-radius | spread-radius | color;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>名稱</th>
+<th>用途</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>offset-x</td>
+<td>水平陰影投射</td>
+<td>值越大陰影越往左偏</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>垂直陰影投射</td>
+<td>值越大陰影越往下偏</td>
+</tr>
+<tr>
+<td>blur-radius</td>
+<td>模糊程度</td>
+<td>值越大越模糊</td>
+</tr>
+<tr>
+<td>spread-radius</td>
+<td>陰影大小</td>
+<td>以元素本身大小為基準去修正，例如給 1px，陰影就會是比元素本身大 1px</td>
+</tr>
+<tr>
+<td>color</td>
+<td>顏色</td>
+<td>就是顏色</td>
+</tr>
+<tr>
+<td>inset</td>
+<td>插入(???</td>
+<td>特殊的關鍵字，默認不輸入，填入的話會改變陰影模式，但根本篇無關就不詳細了</td>
+</tr>
+</tbody></table>
+<p>再比對我們剛才輸入的內容</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="range"]</span> &#123;</span><br><span class="line">  <span class="comment">// ...略</span></span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  &amp;::-webkit-slider-thumb &#123;</span><br><span class="line">    // ...略</span><br><span class="line">    box-shadow: -<span class="number">100vw</span> <span class="number">0</span> <span class="number">0</span> <span class="number">100vw</span> <span class="number">#69eaab</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我們把拖曳鈕投射出的陰影往左推 100vw 的距離，再將他放大到同樣單位的大小，<br>設計出色塊跟著拖曳紐移動的效果，最後搭配前面的<code>overflow</code>把多餘的部分裁掉，<br>mission completed, 目標達成。</p>
+<p>可是如果我只是想做長相比較傳統的 input 怎麼辦？我不想要方型怎麼辦？</p>
+<img src="/Blog/2019/10/21/[CSS]裝扮你的RangeInput/goal.png">
+
+<p>當然，拖曳紐本身要圓型實在太簡單不過了，可是我們要怎麼把陰影變得比拖曳鈕小呢？<br>我第一直覺…<br>把<code>spread-radius</code>,<code>offset-x</code>變小啦！</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...略</span></span><br><span class="line">&amp;::-webkit-slider-thumb &#123;</span><br><span class="line">  // ...略</span><br><span class="line">  box-shadow: -<span class="number">20px</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">10px</span> <span class="number">#69eaab</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/Blog/2019/10/21/[CSS]裝扮你的RangeInput/wrong.png">
+
+<center>ㄜ ...</center>
+
+<p>ㄜ …對喔，我把陰影縮小就全都等比例縮小了，該怎麼辦？</p>
+<hr>
+<br>
+
+<h3 id="extra-step-box-shadow-ADVANCED"><a href="#extra-step-box-shadow-ADVANCED" class="headerlink" title="extra step - box-shadow ADVANCED!"></a>extra step - box-shadow ADVANCED!</h3><p>其實<code>box-shadow</code>五個值可以視為一組，然後可以填無限組值給他，<br>也就是說我們可以給他 N 組不同的陰影，搞得像是很多個光源打在同一個物件上，<br>那麼就可以利用這個特係，給他 N 個往左偏移的小陰影啦～</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...略</span></span><br><span class="line">&amp;::-webkit-slider-thumb &#123;</span><br><span class="line">  // ...略</span><br><span class="line">  box-shadow: -<span class="number">20px</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">10px</span> <span class="number">#69eaab</span>, -<span class="number">30px</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">10px</span> <span class="number">#69eaab</span>,</span><br><span class="line">    -<span class="number">40px</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">10px</span> <span class="number">#69eaab</span>, -<span class="number">50px</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">10px</span> <span class="number">#69eaab</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/Blog/2019/10/21/[CSS]裝扮你的RangeInput/notsogood.png">
+
+<p>才打五組肥宅我的手油就已經讓鍵盤變成炸物店的吸油紙，太累了吧。<br>而且仔細看其實一堆圈圈，這樣我不就要把間距改更小，又要打更多才能完成。</p>
+<p>身為工程師還是要把這種事情自動運算完才對啊。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 建立</span></span><br><span class="line"><span class="variable">$inputWidth</span>: <span class="number">200</span>;</span><br><span class="line"></span><br><span class="line">@function getProgress(<span class="variable">$inputWidth</span>, <span class="variable">$color</span>) &#123;</span><br><span class="line">  <span class="variable">$val</span>: -<span class="number">5px</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">10px</span> <span class="variable">$color</span>;</span><br><span class="line">  @<span class="keyword">for</span> <span class="variable">$i</span> from 6 through <span class="variable">$inputWidth</span> &#123;</span><br><span class="line">    <span class="variable">$val</span>: #&#123;<span class="variable">$val</span>&#125;, -#&#123;<span class="variable">$i</span>&#125;px <span class="number">0</span> <span class="number">0</span> -<span class="number">10px</span> #&#123;<span class="variable">$color</span>&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  @return <span class="variable">$val</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="range"]</span> &#123;</span><br><span class="line">  <span class="comment">// ...略</span></span><br><span class="line">  <span class="attribute">width</span>: #&#123;inputWidth&#125;px;</span><br><span class="line">  <span class="comment">// ...略</span></span><br><span class="line">  &amp;::-webkit-slider-thumb &#123;</span><br><span class="line">    box-shadow: makeProgress(<span class="variable">$inputWidth</span>, <span class="number">#69eaab</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>再來微調一下大小…</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&amp;::-webkit-slider-runnable-track &#123;</span><br><span class="line">  // ...略</span><br><span class="line">  height: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line">&amp;::-webkit-slider-thumb &#123;</span><br><span class="line">  // ...略</span><br><span class="line">  margin-top: -<span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<center>爽！</center>
+<center>style 你的 range input 就是這麼簡單！(好像也沒有很簡單啦)</center>
+
+<p>最後補上完整的 <a href="https://codepen.io/wizardgreen/pen/OJJbGrP" target="_blank" rel="noopener">Code</a></p>
+<hr>
+<br>
+
+<h2 id="參考連結"><a href="#參考連結" class="headerlink" title="參考連結"></a><center>參考連結</center></h2><ol>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/appearance" target="_blank" rel="noopener">MDN - css: appearance</a></li>
+<li><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/box-shadow" target="_blank" rel="noopener">MDN - css: box-shadow</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/Blog/categories/Note/">Note</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/HTML/">HTML</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/Blog/2019/08/30/[TS]型別斷言的使用時機/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">\[TypeScript\] 型別斷言(annotations)使用時機</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目錄</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#緣起"><span class="nav-number">1.</span> <span class="nav-text">緣起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#實作"><span class="nav-number">2.</span> <span class="nav-text">實作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#真。實作"><span class="nav-number">3.</span> <span class="nav-text">真。實作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#step1-打底"><span class="nav-number">3.1.</span> <span class="nav-text">step1 - 打底</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step2-認識新朋友"><span class="nav-number">3.2.</span> <span class="nav-text">step2 - 認識新朋友</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-3-box-shadow"><span class="nav-number">3.3.</span> <span class="nav-text">step 3 - box-shadow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#extra-step-box-shadow-ADVANCED"><span class="nav-number">3.4.</span> <span class="nav-text">extra step - box-shadow ADVANCED!</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考連結"><span class="nav-number">4.</span> <span class="nav-text">參考連結</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/Blog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/Blog/tags" class="mobile-nav-link">Tags</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Greene&#39;s Blog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+  <script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/Blog/js/script.js"></script>
+<script src="/Blog/js/bootstrap.js"></script>
+<script src="/Blog/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
