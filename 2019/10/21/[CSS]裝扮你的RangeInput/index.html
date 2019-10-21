@@ -20,10 +20,12 @@
 <meta property="og:description" content="原生 Range Input 醜死啦">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://wizardgreen.github.io/Blog/2019/10/21/[CSS]裝扮你的RangeInput/design.png">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2019/10/21/[CSS]裝扮你的RangeInput/square.gif">
 <meta property="og:image" content="https://wizardgreen.github.io/Blog/2019/10/21/[CSS]裝扮你的RangeInput/goal.png">
 <meta property="og:image" content="https://wizardgreen.github.io/Blog/2019/10/21/[CSS]裝扮你的RangeInput/wrong.png">
 <meta property="og:image" content="https://wizardgreen.github.io/Blog/2019/10/21/[CSS]裝扮你的RangeInput/notsogood.png">
-<meta property="og:updated_time" content="2019-10-21T06:49:25.346Z">
+<meta property="og:image" content="https://wizardgreen.github.io/Blog/2019/10/21/[CSS]裝扮你的RangeInput/round.gif">
+<meta property="og:updated_time" content="2019-10-21T06:52:09.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="裝扮你的 Range Input">
 <meta name="twitter:description" content="原生 Range Input 醜死啦">
@@ -145,6 +147,7 @@
 
 <h2 id="緣起"><a href="#緣起" class="headerlink" title="緣起"></a><center>緣起</center></h2><p>現在待的公司是以高複雜度的系統網站，作為主要的工作項目，都是在寫共用元件、各種 React&amp;Redux 邏輯。一轉眼過了九個月，看著設計師的新稿，突然發現到上面的 Range Input 有個我不會實作細節，我才突然驚覺這段時間並沒有學習更多的 CSS 技巧。</p>
 <img src="/Blog/2019/10/21/[CSS]裝扮你的RangeInput/design.png">
+<br>
 
 <center>我不知道怎麼實作拖曳左方的白色線條</center>
 <center>其實我根本忘記怎麼修改 range input...</center>
@@ -159,7 +162,7 @@
 <br>
 
 <h2 id="真。實作"><a href="#真。實作" class="headerlink" title="真。實作"></a><center>真。實作</center></h2><p>我們要用<code>scss</code>實作下圖的 range input.</p>
-
+<img src="/Blog/2019/10/21/[CSS]裝扮你的RangeInput/square.gif">
 
 <hr>
 <br>
@@ -252,7 +255,8 @@
 <p>再來微調一下大小…</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&amp;::-webkit-slider-runnable-track &#123;</span><br><span class="line">  // ...略</span><br><span class="line">  height: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line">&amp;::-webkit-slider-thumb &#123;</span><br><span class="line">  // ...略</span><br><span class="line">  margin-top: -<span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
+<img src="/Blog/2019/10/21/[CSS]裝扮你的RangeInput/round.gif">
+<br>
 
 <center>爽！</center>
 <center>style 你的 range input 就是這麼簡單！(好像也沒有很簡單啦)</center>
