@@ -16,7 +16,7 @@ tags:
 
 ---
 
-## 想學？我教你呀！
+## 開始
 
 1. 建立完畢 Hexo Blog 並且以推上 Github repo
 2. 安裝 **hexo-deployer-git**

@@ -1,8 +1,8 @@
 ---
-title: "[TypeScript] Abstract Classes"
+title: "學習筆記 TypeScript Abstract Classes"
 tags: TypeScript
 categories: Note
-# date:
+date: 2020-09-18
 ---
 
 1. 無法直接拿來創造物件.

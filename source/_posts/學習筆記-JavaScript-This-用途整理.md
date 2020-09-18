@@ -1,7 +1,8 @@
 ---
-title: JavaScript This 用途整理
+title: 學習筆記 JavaScript This 用途整理
 date: 2018-04-07 21:54:28
 tags: JavaScript
+categories: Note
 ---
 ## <center>JavaScript This 用途整理</center>
 後天就是我掛上工程師頭銜的第一個上班日，回想起半年前剛開始自學的時候，光是強者學弟寫給我的 React example 就得花上好幾個小時才能讀懂，印象最深刻的就是`this`，強者學弟都懶得解釋，直喊著「乾哥你還是上網查好了，很難講清楚...」。

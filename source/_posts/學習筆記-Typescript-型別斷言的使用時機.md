@@ -1,5 +1,5 @@
 ---
-title: "[TypeScript] 型別斷言(annotations)使用時機"
+title: "學習筆記 TypeScript 型別斷言(annotations)使用時機"
 tags: TypeScript
 categories: Note
 date: "2019-08-30 07:29:00"

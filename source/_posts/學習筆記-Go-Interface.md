@@ -1,8 +1,8 @@
 ---
-title: "[Golang]Interface"
+title: "學習筆記 Go Interface"
 tags: Golang
 categories: Note
-# date:
+date: "2020-09-18"
 ---
 
 Golang 學習筆記 - Interface

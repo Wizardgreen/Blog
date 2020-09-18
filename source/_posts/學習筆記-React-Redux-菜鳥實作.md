@@ -1,9 +1,10 @@
 ---
-title: React Redux 菜鳥實作
+title: 學習筆記 React Redux 菜鳥實作
 tags:
   - React
   - Redux
 date: 2018-05-04 22:59:24
+categories: Note
 ---
 
 > 還搞不懂 Redux 要怎麼使用?
@@ -16,9 +17,9 @@ date: 2018-05-04 22:59:24
 - 適合對象：React 新手，剛熟悉用 React 製作一個元件、頁面
 - 花費時間：一小時...半，Maybe？
 
-## <center>React Redux 菜鳥實作</center> #
+# <center>React Redux 菜鳥實作</center> 
 
-## <center>緣起</center> #
+# <center>緣起</center> 
 因為工作上的需求，我一頭栽入了 React 的生態圈，網路上中文資源很多，真的很友善，但不是資訊過時，就是 code 裡面寫了一些我自己看不懂的語句，搞得我花很多時間去讀一些不太相關的資料。說到底還是因為我自己是個真菜鳥，所以寫這篇記錄，除了強化自己對 React + Redux 的印象，也是希望屏除掉一堆術語跟一堆炫砲的 ES78~~910~~ 寫法，以真正新手的角度寫一篇新手看得懂的文章。
 
 但 Redux 相對說來也是比較進階的套件，所以最起碼還是要具備以下幾樣知識：
@@ -29,7 +30,7 @@ date: 2018-05-04 22:59:24
 
 那我們就先從原理開始，接著一步一步實作，直到完成一個最簡易的元件\(Component\).
 
-## <center>React & Redux</center> #
+# <center>React & Redux</center> 
 Redux 跟 React 是兩個完全獨立的函式庫，React 的多層元件使得傳遞資料變的非常繁瑣，而 Redux 則能十分有效的透過資料流來解決這個問題，無論是在開發過程或是除錯都會因為 Redux 帶來的資料流動而有了大幅的改善，在 css trick 網站上的介紹文中，一張圖片直接了檔的表示有無 Redux 的差異。
 {% asset_img diff.png %}
 [圖片來源 - Leveling Up with React: Redux](https://css-tricks.com/learning-react-redux/)
@@ -41,11 +42,9 @@ Redux 跟 React 是兩個完全獨立的函式庫，React 的多層元件使得�
 <br />
 
 沒有親自實作的話，這些抽象的概念很容易搞混新手，所以捲起袖子，我們來寫 Code 吧！
-
 ---
-<br>
 
-## <center>環境建置 - Create React App</center> #
+# <center>環境建置 - Create React App</center> 
 我們使用 Facebook 自己推出的工具來建立 React 的開發環境，真心建議只要跟 Webpack 相關的東西，最好都用官方自己推出的比較好，不然遇到個小問題就要花一堆精神去查資料，只會帶來滿滿的挫折感而已。
 [Create React App](https://github.com/facebook/create-react-app)
 
@@ -105,11 +104,11 @@ npm install react-redux --save
 ```
 好，到這裡我們的前置動作就完成了，是不是很簡單呢？ 真的很簡單。
 
-## <center>實(ㄕˊ) 作(ㄗㄨㄛˋ)</center> #
+# <center>實作</center>
 我們現在要製作一個能夠加減的計數器，透過這樣簡易的功能，我們就能夠用最少的學習成本來理解 Redux，還記得前面說過的概念嗎？一切都是從發出`action`開始，我們也先從建立`action`來一步一步打造完整的內容吧。
 
 ---
-### <center>Action</center> #
+# <center>Action</center>
 ```js
 {
   type: 'PLUS',
@@ -161,9 +160,9 @@ export function sub(){
 
 到這裡 action 的部分就完工了，
 接下來我們要來製作`reducer`...接收`action creater`之後進行處理的運作中樞。
-
 ---
-### <center>Reducer</center> #
+
+# <center>Reducer</center> 
 reducer 會帶入兩個參數 - 1.現在的 state. 2.發出的 action，接著使用 switch\(\) 與`type`來判斷該做什麼事情，最後再回傳新的 state 就大功告成。但有一點非常重要，reducer 必須是一個*pure function*，這代表說絕對不要在 reducer 內作下列的事情：
 - Call API、改變路由...等等會造成 side effect 的動作.
 - 有`new Date()`、`Math.random()`等傳值不穩定的 function.
@@ -213,9 +212,9 @@ export default counterApp;
 哇！恭喜～不屈不饒不放棄的你，終於抵達這裡了～
 不過前面還很遠，就跟職涯一樣很漫長，你的肝也還很新鮮。
 所以站起來動動身體，我們還要繼續後半段。
-
 ---
-### <center>Components</center> #
+
+# <center>Components</center>
 加入 Redux 以後，React Component 就有了兩新概念：
 
 1- Presentational Component
@@ -230,10 +229,10 @@ export default counterApp;
 ---
 <br>
 
-#### <center>Presentational Component</center> #
+# <center>Presentational Component</center>
 Presentational Component 就是我們早已習慣的 React Component，不贅述直接看 Code。
 
-```js
+```jsx
 // src/components/counter.js
 import React from 'react';
 
@@ -251,10 +250,10 @@ const Counter = ({value, addEvent, subEvent}) => {
 export default Counter;
 ```
 
-#### <center>Container Component</center> #
+# <center>Container Component</center>
 Container Component 是完全的新東西，通常不會負責畫面上的表現。
 負責傳遞 state 與 dispatch，擔當起 React Component 與 Redux 之間的橋樑。 
-```js
+```jsx
 // src/containers/counterContainer.js
 import { connect } from 'react-redux';
 import Counter from '../components/counter';
@@ -323,7 +322,7 @@ AddTodo = connect()(AddTodo)
 export default AddTodo
 ```
 
-#### <center>Root Component</center> #
+# <center>Root Component</center>
 好，主要的功能都完成了，
 現在我們來補上 root component 吧～沒什麼特別的，就跟平常的 React 一樣。
 ```js
@@ -344,7 +343,7 @@ export default App;
 另外檔案目錄分類也需要提醒，App.js 這個根元件從檔案結構上看來是屬於 component，所以在官網範例中，App.js 被放到 components 資料夾底下，我自己是覺得這樣分類不方便，因此將他獨立出來，與 index.js 一起放在根目錄。
 
 ---
-### <center>Store</center> #
+# <center>Store</center> 
 好了，最複雜的部分都結束了。接下來很簡單，
 就像魔戒裡面佛羅多把至尊戒丟到岩漿裡一樣簡單，沒有咕嚕在那邊亂的話，事情就這麼簡單。
 你就是佛羅多，最後的步驟就項丟戒指到岩漿裡這麼easy。而我，就是咕嚕。   
@@ -400,7 +399,7 @@ npm run start
 ---
 <br>
 
-## <center>總結</center> #
+# <center>總結</center> 
 有沒有感覺明明只是一個計數器，卻感覺花了好大的功夫？的確，要應用 Redux 到一個極小的專案上面，是會有許多麻煩的地方。但是想一想，如果今天是一個正式的網站，使用者光是輸入資料就會穿透五層的元件來進行操作，不就要寫一堆 props、每層還要驗證跟傳遞，出了錯誤更要花時間慢慢找出問題點，光想到就覺得煩躁吧？只要花點心思先把 Redux 建立好，就能讓所有元件從唯一的 Store 存取資料，就算出問題我們也可以找出對應的 Reducer 來檢查！
 
 最後用一張我自己畫超爛的概念圖，希望多少可以幫助大家理解啦ＱＱ
@@ -410,10 +409,10 @@ npm run start
 給自己休息一下，接著就來試著自己把 Redux 應用到自己的專案上吧！
 
 ---
-<br>
-## <center>相關文章</center> #
+
+
+# <center>相關文章</center>
+
 - [從0到100打造一個 React Native boilerplate](https://legacy.gitbook.com/book/noootown/deeperience-react-native-boilerplate/details)
 - [Redux 教學](https://chentsulin.github.io/redux/index.html)
 - [見證奇蹟的時刻 - 實作Redux](https://ithelp.ithome.com.tw/articles/10196346)
-
----
