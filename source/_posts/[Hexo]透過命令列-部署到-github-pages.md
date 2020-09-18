@@ -10,13 +10,13 @@ tags:
 
 <!-- more -->
 
-### 緣起
+## 緣起
 
 最近發現我超過一年沒好好紀錄筆記，急忙地把部落格重新改版上線，結果在最後一個步驟驚覺早就忘記怎麼使用 `hexo deploy` ＸＤＤ，趁這強勢回歸(自已說)的機會，順便記錄一下如何使用這款 Hexo 的部屬套件，以免自己下次回歸時又忘記(X).
 
 ---
 
-### 想學？我教你呀！
+## 想學？我教你呀！
 
 1. 建立完畢 Hexo Blog 並且以推上 Github repo
 2. 安裝 **hexo-deployer-git**
@@ -50,7 +50,7 @@ hexo clean && hexo d
 
 ---
 
-### 相關連結
+## 相關連結
 
 [hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git)
 [都寫到這裡了才發現官網有教學...](https://hexo.io/zh-tw/docs/deployment.html)
