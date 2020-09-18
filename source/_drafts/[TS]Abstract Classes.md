@@ -1,5 +1,5 @@
 ---
-title: \[TypeScript\] Abstract Classes
+title: "[TypeScript] Abstract Classes"
 tags: TypeScript
 categories: Note
 # date:

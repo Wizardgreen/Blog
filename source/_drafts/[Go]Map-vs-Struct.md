@@ -1,8 +1,8 @@
 ---
-title: \[Golang\] Map-vs-Struct
+title: "[Golang] Map-vs-Struct"
 tags: Golang
 categories: Note
-# date: 
+# date:
 ---
 
 Golang 學習筆記 - Map & Struct

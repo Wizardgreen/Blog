@@ -1,6 +1,6 @@
 ---
-title: \[JS30\] Day 6 - Type Ahead
-date: '2018-08-30 09:19:12'
+title: "[JS30] Day 6 - Type Ahead"
+date: "2018-08-30 09:19:12"
 categories: JavaScript 30
 tags: JavaScript
 ---
@@ -11,17 +11,19 @@ tags: JavaScript
 
 {% asset_img cover.png %}
 
-## <center>Day 6: Type Ahead</center> #
+## <center>Day 6: Type Ahead</center>
+
 <center>預先判斷輸入內容</center>
 
 ---
 
-## <center>ES6 Fetch</center> #
+## <center>ES6 Fetch</center>
 
 使用 ajax 進行資料傳輸的辦法有很多種，有些人會用 jQuery 的方法，像我則是常用 Axios 來處理繁雜的過程。但其實 ES6 本身就有一個簡化的`fetch()`可以進行 Request。一打開檔案就能看到 Wes 已經幫我們寫好了一個變數，並賦予它我們所需要的資料 url，那就直接來看如何應用到本次的題目上吧。
 
 ```js
-const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+const endpoint =
+  "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
 const cities = [];
 
 // 如果先用 console.log 看過一次 fetch() ，你會發現其實會回傳一個 Promise 物件，
@@ -29,11 +31,11 @@ const cities = [];
 // 在知道 fetch 是 promise 之後，我們就可以用 .then() 來進行後續動作，
 // 先用 console.log() 來瞧瞧回傳了什麼樣的資料？
 
-fetch(endpoint).then(res => console.log(res));
+fetch(endpoint).then((res) => console.log(res));
 ```
 
 - [JavaScript ES6 Promise - 前端，沒有極限](https://wcc723.github.io/life/2017/05/25/promise/)
-- [Promise物件建立與基本使用](https://eyesofkids.gitbooks.io/javascript-start-es6-promise/content/contents/basic_usage.html)
+- [Promise 物件建立與基本使用](https://eyesofkids.gitbooks.io/javascript-start-es6-promise/content/contents/basic_usage.html)
 
 <br />
 
@@ -56,6 +58,7 @@ fetch(endpoint)
 <br />
 
 依照轉換結果我們就能得出每筆資料結構都長得像下面這個樣子：
+
 ```js
 {
   city: "New York",
@@ -67,10 +70,12 @@ fetch(endpoint)
   state: "New York",
 }
 ```
+
 看來`city`與`state`正是我們需要的項目，再來就是建立過濾的函示吧！
+
 ```js
 // 預先設想這個函式要帶入 1.搜尋關鍵字 2.要搜尋的陣列
-function findMatchs(word, dataArray) 
+function findMatchs(word, dataArray)
   // 使用第四章提過的 filter() 方法來篩選正確結果
   return dataArray.filter(place => {
     // 這裡我們使用到了一個之前沒提過的新東西 - 正規表達式
@@ -93,12 +98,13 @@ function findMatchs(word, dataArray)
 <br />
 
 再來我們建立將資料呈現至畫面上的函式：
+
 ```js
-const search = document.querySelector(".search");           // 輸入匡
+const search = document.querySelector(".search"); // 輸入匡
 const suggestions = document.querySelector(".suggestions"); // 呈現結果
 
-search.addEventListener('change', displayMatchs);
-search.addEventListener('keyup', displayMatchs);
+search.addEventListener("change", displayMatchs);
+search.addEventListener("keyup", displayMatchs);
 
 function displayMatchs() {
   // 因為題目需求是在 input 內輸入資料時就觸發過濾與畫面呈現，
@@ -108,14 +114,16 @@ function displayMatchs() {
   // 一樣是第四章出現過的陣列方法，能夠回傳長度相同的陣列
   // 但陣列是沒辦法直接用 innerHTML 轉化成 DOM 的
   // 所以我們在最後面用 join() 整合成一字串。
-  const html = matchArray.map(place => {
-    return `
+  const html = matchArray
+    .map((place) => {
+      return `
       <li>
         <span class="name">${place.city}, ${place.state}</span>
         <span class="population">${place.population}</span>
       </li>
-    `
-  }).join();
+    `;
+    })
+    .join();
   suggestions.innerHTML = html;
 }
 ```
@@ -125,23 +133,32 @@ function displayMatchs() {
 好~到這裡，基本的資料過濾與呈現都完成了。但是我們還缺了符合字串的 HighLight 以及人口數字的千分位符號，所以我們還要再修改一下`displayMatch()`：
 
 Hight Light 部分：
+
 ```js
 function displayMatchs() {
   const matchArray = findMatchs(this.value, cities);
-  const html = matchArray.map(place => {
-    // 組成字串的同時，再用一次正規表達式，
-    // 將我們原本的資料用字串的方法 - replace 替換成預先寫好 CSS 的 DOM 字串
-    const regex = new RegExp(this.value, 'gi');
-    const city = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
-    const state = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
-    // 接著一樣帶入字串中
-    return `
+  const html = matchArray
+    .map((place) => {
+      // 組成字串的同時，再用一次正規表達式，
+      // 將我們原本的資料用字串的方法 - replace 替換成預先寫好 CSS 的 DOM 字串
+      const regex = new RegExp(this.value, "gi");
+      const city = place.city.replace(
+        regex,
+        `<span class="hl">${this.value}</span>`
+      );
+      const state = place.state.replace(
+        regex,
+        `<span class="hl">${this.value}</span>`
+      );
+      // 接著一樣帶入字串中
+      return `
       <li>
         <span class="name">${city}, ${state}</span>
         <span class="population">${place.population}</span>
       </li>
     `;
-  }).join('');
+    })
+    .join("");
   suggestions.innerHTML = html;
 }
 ```
@@ -149,6 +166,7 @@ function displayMatchs() {
 <br />
 
 千分位部分：
+
 ```js
 / 這是正規表達式的令一種寫法，能夠以 / 中間夾帶規則... / 的方式來寫在其中。
 function numberWithCommas(x) {
@@ -166,6 +184,7 @@ function numberWithCommas(x) {
       <span class="population">${numberWithCommas(place.population)}</span>
     </li>`
 ```
+
 到這裡就大功告成囉！正規表達式不太容易上手，但習慣後可以大幅減少程式碼的量，而且在其他語言也用得到。雖然不算是第一重要，但如果有餘力的話，學起來也是非常實用的。
 
 <br />
@@ -175,6 +194,7 @@ function numberWithCommas(x) {
 <br />
 
 最後分享一下我以前自己寫的千分位函式：
+
 ```js
 onst formatWithCommas = Num => (
   Num
@@ -189,11 +209,13 @@ onst formatWithCommas = Num => (
     .join('');
 )
 ```
+
 哈哈，有沒有覺得正規表達式很簡潔呢？
 
 呼．．．終於又生出一篇了，這樣就不會被 [Engine](https://medium.com/@linengine) 說我都斷尾了 (擦汗
 
 ---
+
 <br />
 ## <center>相關連結</center>
 - [JavaScript ES6 Promise - 前端，沒有極限](https://wcc723.github.io/life/2017/05/25/promise/)

@@ -1,5 +1,5 @@
 ---
-title: \[Cordova\] iOS 錯誤訊息 tool \'xcodebuild\' requires Xcode
+title: "[Cordova] iOS 錯誤訊息 tool 'xcodebuild' requires Xcode"
 date: "2019-08-19 11:07:46"
 tags:
   - Cordova

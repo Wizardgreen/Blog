@@ -1,5 +1,5 @@
 ---
-title: \[Golang\]Interface
+title: "[Golang]Interface"
 tags: Golang
 categories: Note
 # date:

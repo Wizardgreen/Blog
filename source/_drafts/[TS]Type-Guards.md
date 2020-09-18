@@ -1,5 +1,5 @@
 ---
-title: \[TypeScript\] Type Guards
+title: "[TypeScript] Type Guards"
 tags: TypeScript
 categories: Note
 # date:
