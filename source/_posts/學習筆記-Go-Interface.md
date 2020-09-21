@@ -7,8 +7,6 @@ date: "2020-09-18"
 
 Golang 學習筆記 - Interface
 
-<!-- more -->
-
 先來一段 Code.
 
 ```go
